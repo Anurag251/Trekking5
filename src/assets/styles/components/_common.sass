@@ -1,0 +1,3453 @@
+@use '../helpers/_mixin' as *
+@use '../layout/_grid' as *
+@use '../helpers/_variables' as *
+
+.title-part
+  text-align: center
+  margin-bottom: 2.5rem
+
+  h5
+    font-size: .9rem
+    font-weight: 400
+    text-transform: uppercase
+    letter-spacing: 2px
+
+  .name
+    font-weight: 300
+    font-size: 2rem
+    text-transform: uppercase
+    margin-bottom: .3rem
+
+    // font-family: 'Old Growth', sans-serif
+
+.why-choose-us
+  .title-part
+    color: $dark
+
+  .list
+    @include grid($columns: 1fr 1fr 1fr 1fr)
+    grid-gap: 2rem
+    margin-top: 2rem
+
+    .item
+      text-align: center
+      @include flex($justify: center)
+      flex-direction: column
+      position: relative
+      height: 20rem
+      width: 100%
+
+      &:hover
+        &::after
+          @include dark($opacity: .5)
+          backdrop-filter: blur(10px)
+
+      &::after
+        content: ''
+        @include dark($opacity: .3)
+        backdrop-filter: blur(0)
+        transition: .4s
+
+      .image
+        height: 100%
+        width: 100%
+
+        img
+          @include image()
+
+      .content
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        z-index: 2
+
+      i
+        font-size: 3rem
+        color: $light
+        margin-bottom: 1.6rem
+        @include flex($justify: center)
+
+      .name
+        font-size: 1.1rem
+        font-weight: 600
+        text-transform: capitalize
+        color: $light
+        margin-bottom: 1rem
+        max-width: 10rem
+        line-height: 1.6rem
+
+        &:nth-child(3)
+          font-style: italic
+
+.BreconMountainRescue
+  background-color: #FCFBFC
+
+  .list
+    @include flex($justify: center)
+
+    .item
+      max-width: 600px
+      @include flex($justify: center)
+      flex-direction: column
+      text-align: center
+
+      .desc
+        margin: 1rem 0
+        line-height: 1.5rem
+        color: rgba($dark, .8)
+
+      button
+        @include customButton($bgcolor: $sec, $color: $light)
+
+.HaveChat
+  background-color: #F2F2F2
+
+  .list
+    @include flex($justify: center)
+
+    .item
+      max-width: 600px
+      @include flex($justify: center)
+      flex-direction: column
+      text-align: center
+
+      .desc
+        margin: 0 0 1.5rem
+
+      .button-group
+        @include flex($justify: center)
+        gap: 1rem
+
+        .callBtn
+          @include customButton($bgcolor: $pri, $color: $light)
+
+        .phoneBtn
+          @include flex($justify: flex-start)
+          gap: 8px
+          cursor: pointer
+
+.blog_page
+  .title-part
+    color: $dark
+
+  .list
+    @include grid($columns: 1fr 1fr 1fr)
+    margin-top: 2rem
+
+.WhatOurCustomersSays
+  background-color: #F2F2F2
+
+  .list
+    @include grid($columns: 1fr 1fr 1fr)
+    margin-top: 2rem
+
+    .item
+      padding: 1rem
+      border: 1px solid rgba($dark, .6)
+      background-color: $light
+      text-align: center
+
+      .star-area
+        @include flex($justify: center)
+        gap: 4px
+        margin-top: 1rem
+
+        i
+          font-size: 1.5rem
+          color: $pri
+
+      .name
+        margin: 1rem 0
+        font-size: 18px
+        font-weight: 500
+
+      .desc
+        font-size: 18px
+        line-height: 1.8rem
+        color: rgba($dark, .8)
+        margin-bottom: 1rem
+
+      button
+        width: 100%
+        @include customButton($bgcolor: $pri, $color: $light)
+        border: 2px solid $pri
+        background-color: $pri
+
+.MountainOFKnowledge
+  .list
+    @include grid($columns: 1fr 1fr 1fr 1fr)
+    margin-top: 2rem
+
+    .item
+      height: 25rem
+      position: relative
+      overflow: hidden
+      border-radius: .4rem
+      transition: .4s
+
+      &:hover
+        box-shadow: 0 4px 6px rgba($dark, .2)
+        transform: translateY(-2px) scale(1.02)
+        .image-area
+          transform: scale(1.1) translateY(-1rem)
+
+        .content
+          bottom: 0rem
+
+        &::after
+          background-color: rgba($pri, .7)
+
+      // &::after
+      //   content: ""
+      //   @include dark($opacity: .4)
+      //   background-color: rgba($pri, .5)
+      //   z-index: 1
+      //   transition: .4s
+
+      .image-area
+        height: 100%
+        width: 100%
+        transform: scale(1.1) translateY(1rem)
+        transition: .4s
+
+        img
+          @include image()
+
+      .content
+        position: absolute
+        bottom: -3.5rem
+        width: 100%
+        padding: 1rem
+        color: $light
+        background-color: rgba($pri, .8)
+        text-align: center
+        @include flex($justify: center)
+        transition: .4s
+
+        z-index: 2
+
+        .name
+          font-size: 1.2rem
+          font-weight: 500
+          text-transform: capitalize
+          max-width: 90%
+          text-align: center
+          overflow: hidden
+          text-overflow: ellipsis
+          white-space: nowrap
+
+        .desc
+          font-size: .9rem
+          font-weight: 300
+
+.AdVentuRes
+  .list
+    @include grid($columns: 1fr 1fr 1fr)
+    grid-gap: 2rem
+    margin-top: 2rem
+
+  .package-footer
+    padding: 1.4rem
+    background-color: $pri
+    margin-top: 2rem
+    text-align: center
+    color: $light
+
+    h2
+      font-size: 24px
+      font-weight: 300
+      margin-bottom: .6rem
+
+      span
+        font-size: 20px
+        font-weight: 600
+        letter-spacing: 1.3px
+        text-transform: capitalize
+
+    p
+      font-size: 14px
+      font-weight: 500
+
+.HelpfulYetis
+  position: relative
+
+  .list
+    @include grid($columns: 1fr 1fr 1fr 1fr)
+    align-items: flex-start
+
+    .item
+      background-color: rgba($light, .1)
+      background-color: $light
+      cursor: pointer
+
+      &:hover
+        .content
+          .name, .phone
+            color: $light
+
+          .social-media
+            li
+              a
+                color: $light
+
+          &::before
+            height: 100%
+
+      .image-area
+        height: 17rem
+        width: 100%
+        overflow: hidden
+        box-shadow: 0 0 10px rgba($dark, .2)
+
+        img
+          @include image()
+
+      .content
+        padding: 1rem
+        position: relative
+
+        &::before
+          content: ""
+          @include dark($opacity: 1)
+          height: 0
+          @include trans()
+          z-index: 1
+
+      .name
+        font-size: 1rem
+        font-weight: 600
+        color: $dark
+        position: relative
+        z-index: 2
+        @include trans()
+        max-width: 90%
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+
+      .social-media
+        margin-top: .5rem
+        @include flex($justify: flex-start)
+        gap: 1rem
+        padding-left: 0
+        position: relative
+        z-index: 2
+
+        li
+          a
+            color: $dark
+            @include trans()
+
+      ul
+        padding-left: 1rem
+
+      .phone
+        font-size: .7rem
+        color: $dark
+        margin: .3rem 0
+        list-style: disc
+        position: relative
+        z-index: 2
+        @include trans()
+
+      .desc
+        text-align: justify
+        font-size: .9rem
+        line-height: 1.4rem
+
+      .social-icon
+        @include flex($justify: flex-start)
+        gap: .4rem
+
+        i
+          color: $sec
+          font-size: 1.2rem
+
+      p
+        text-align: center
+        color: rgba($dark, .7)
+        margin-bottom: 1rem
+        font-size: .9rem
+
+      .button-group
+        @include flex($justify: center)
+        gap: 1rem
+
+        .callButton
+          @include customButton($bgcolor: $pri, $color: $light)
+
+        .phoneButton
+          @include flex($justify: flex-start)
+          gap: 8px
+          cursor: pointer
+          color: $dark
+
+.DownloadTripGuide
+  background-color: $darkBg
+  padding: 1rem 0 3rem
+  @include flex($justify: center)
+
+  .inner
+    position: relative
+    max-width: 700px
+    width: 100%
+
+  .book-image
+    position: absolute
+    top: -100px
+    left: 0
+    height: 300px
+    width: 180px
+    z-index: 10
+
+    img
+      @include image()
+      object-fit: contain
+
+  .content
+    margin-left: 13rem
+    text-align: center
+    color: $light
+
+    .name
+      font-size: 20px
+
+      span
+        font-size: 24px
+        font-weight: 600
+
+    p
+      font-size: 14px
+      font-weight: 300
+      margin: 1rem 0
+
+    .download
+      @include customButton($bgcolor: $pri, $color: $light)
+      width: 100%
+      height: 50px
+
+.About_us
+  .title
+    max-width: 58rem
+    margin: 0 auto
+    margin-bottom: 3rem
+
+  .item
+    @include flex($justify: stretch)
+    gap: 2rem
+
+    .content
+      flex: 50%
+
+    .images-area
+      flex: 50%
+      height: 28rem
+
+      img
+        @include image()
+        border-radius: 1rem
+
+    .mySwiper
+      flex: 50%
+
+      .swiper-slide-active
+        .image-area
+          filter: blur(0)
+
+      .image-area
+        height: 23rem
+        filter: blur(10px)
+        @include trans()
+
+        img
+          @include image()
+
+    .content
+      h1
+        margin-bottom: .5rem
+        font-size: 1.6rem
+        font-weight: 500
+
+      p
+        line-height: 1.7rem
+        font-size: 17px
+        color: rgba($dark, .7)
+        text-align: justify
+
+      h6
+        font-size: 16px
+        line-height: 1.7rem
+        font-weight: 300
+        margin-bottom: 1rem
+
+      button
+        @include customButton($bgcolor: $pri, $color: $light)
+        margin-top: 1rem
+
+  .button-group
+    gap: 1rem
+    margin-top: 1rem
+    margin-bottom: .3rem
+
+    button
+      font-size: 1rem !important
+      @include customButton($bgcolor: $pri, $color: $light)
+      border: 2px solid $pri
+
+.PageBanner
+  height: 60vh
+  position: relative
+  @include bgImage()
+  @include flex($justify: center)
+
+  &::after
+    content: ''
+    @include dark($opacity: .1)
+    background-color: rgba($dark, .3)
+    z-index: 1
+
+  .wrapper
+    position: relative
+    z-index: 2
+    width: 100%
+
+  .breadcrumbs
+    text-align: left
+    @include flex($justify: flex-start)
+    flex-wrap: wrap
+    color: $light
+
+    &.contentLeft
+      justify-content: flex-start
+      text-align: left
+
+    a
+      color: $light
+
+  h4
+    font-size: 20px
+    text-transform: uppercase
+    color: $light
+    text-shadow: 0 0 10px rgba($dark, .8)
+    letter-spacing: 2px
+    margin-bottom: .2rem
+
+  h1
+    text-align: left
+    font-size: 3.5rem
+    color: $light
+    text-shadow: 0 0 10px rgba($dark, .8)
+    font-weight: 600
+    letter-spacing: 2px
+    text-transform: capitalize
+
+    &.contentLeft
+      text-align: left
+
+.ReasonsToChooseUs
+  section
+    padding: 2rem 0
+
+  .about-content
+    h3
+      font-size: 1.5rem
+      margin-bottom: 1rem
+      font-weight: 500
+
+    p
+      margin-bottom: 1.5rem
+      font-size: 16px
+      font-weight: 400
+      line-height: 1.7rem
+      text-align: justify
+
+    table
+      width: 100% !important
+      background: none !important
+
+      td
+        padding: .2rem
+        background: none !important
+
+      p
+        margin-bottom: 0
+
+    ul
+      padding-left: 1.5rem
+
+      li
+        list-style: disc
+        list-style-type: circle
+
+  .with-image
+    @include grid($columns: 1fr 1fr)
+
+    &.fullView
+      grid-template-columns: 1fr
+      padding: 0
+
+    &:nth-child(even)
+      .about-content
+        grid-area: 1
+
+    .image
+      height: 300px
+      width: 100%
+
+      img
+        @include image()
+        object-fit: contain
+
+.AboutPageGallery
+  .mySwiper
+    .swiper-slide
+      height: 360px
+
+      img
+        @include image()
+
+.mountain-image
+  height: 100%
+  width: 100%
+  margin-bottom: -200px
+
+  img
+    @include image()
+
+.Destinations
+  .about-destinations
+    max-width: 800px
+    margin: 0 auto
+    text-align: center
+    @include flex($justify: center)
+    flex-direction: column
+    color: rgba($dark, .8)
+
+    h4
+      font-size: 1.1rem
+      font-weight: 300
+      margin-bottom: 1rem
+      line-height: 1.5rem
+
+    p
+      font-size: .97rem
+      font-weight: 300
+      margin-bottom: 2rem
+      line-height: 1.5rem
+
+    button
+      @include customButton($bgcolor: $darkBg, $color: $light)
+      height: 50px
+      text-transform: uppercase
+
+  .package-footer
+    padding: 1.4rem
+    background-color: $pri
+    text-align: center
+    color: $light
+
+    h2
+      font-size: 24px
+      font-weight: 300
+      margin-bottom: .6rem
+
+      span
+        font-size: 24px
+        font-weight: 600
+        text-transform: uppercase
+        letter-spacing: 2px
+
+    p
+      font-size: 14px
+      font-weight: 500
+
+.TrekkingRegionsWorldwide
+  background-color: $darkBg
+
+  .title-part
+    color: $light
+
+  .list
+    @include grid($columns: 1fr 1fr 1fr)
+    margin-top: 2rem
+
+    .item
+      cursor: pointer
+
+      .image-area
+        height: 300px
+        width: 100%
+
+        img
+          @include image()
+
+      .name
+        width: 100%
+        padding: 1rem
+        font-size: 1.6rem
+        text-transform: uppercase
+        color: $light
+        font-weight: 500
+        text-align: center
+
+.NewPackageDetails
+  background-color: $light
+
+  .PackageMainDetails
+    margin-bottom: 2rem
+
+    .item-list
+      @include grid($columns: 1fr 1fr)
+      color: $dark
+      padding-left: 0 !important
+
+      li
+        @include flex($justify: flex-start)
+        gap: 1rem
+        font-size: 1.2rem
+        font-weight: 300
+        padding: 1rem
+        border-radius: .3rem
+        background-color: rgba($dark, .06)
+
+        .name
+          font-size: 1rem
+          font-weight: 500
+          margin-bottom: 0.3rem
+
+        &.price
+          font-size: 1.6rem
+          font-weight: 600
+          color: #2ae17f
+
+        img
+          height: 2rem
+          width: 2rem
+          object-fit: contain
+
+        i
+          font-size: 1.5rem
+
+.NavigateButtons
+  background-color: lighten($dark, 88%)
+  box-shadow: 0 4px 10px rgba($darkBg, .1)
+  position: sticky
+  top: 0
+  z-index: 10
+  background-color: $light
+
+  .wrapper
+    @include flex($justify: space-between)
+    height: 100%
+
+  .last-button
+    @include flex($justify: center)
+    flex-wrap: wrap
+    column-gap: 1rem
+    row-gap: 1rem
+    height: 100%
+
+    .bookNowNutton
+      @include customButton($bgcolor: $pri, $color: $light)
+      font-size: 1rem
+      text-transform: uppercase
+      height: 100%
+
+    .galleryButton
+      @include customButton($bgcolor: $sec, $color: $light)
+      font-size: 1rem
+      text-transform: uppercase
+      height: 100%
+
+  .button-list
+    @include flex($justify: stretch)
+    grid-gap: 5px
+
+    .navigateBtn
+      height: 3rem
+      background-color: $light
+      color: $darkBg
+      font-weight: 500
+      font-size: 1rem
+      cursor: pointer
+      padding: 0 1rem
+
+      &.active
+        background-color: $dark
+        color: $light
+
+.TripOverview
+  background-color: $light
+  opacity: 0
+  height: 0
+  overflow: hidden
+  transition: .2s
+  pointer-events: none
+
+  &.active
+    overflow: visible
+    pointer-events: auto
+    opacity: 1
+    height: 100%
+
+  .main-title
+    font-size: 1.6rem
+    text-align: left
+    font-weight: 600
+    text-transform: capitalize
+
+    i
+      display: none
+
+  .main-container
+    margin-top: 1rem
+
+    section
+      &:nth-last-child(1)
+        border-bottom: none
+        padding-bottom: 1rem
+
+    .TripOverview-card-list
+      @include grid($columns: 1fr 1fr)
+
+      .TripOverview-card
+        @include grid($columns: 1fr 2fr)
+        border: 1px solid rgba($dark, .4)
+        background-color: #F2F2F2
+        padding: 1.5rem
+
+        .image
+          height: 150px
+          width: 100%
+
+          img
+            @include image()
+            object-fit: contain
+
+        .content
+          .card-title
+            font-size: 1.4rem
+            margin-bottom: .6rem
+            font-weight: 500
+
+          p
+            color: $pri
+            font-size: .97rem
+            line-height: 1.5rem
+
+    .TripOverviewMainContent
+      @include grid($columns: 1fr 1fr)
+
+      p
+        text-align: justify
+        margin-bottom: 1rem
+
+      ul
+        padding-left: 1rem
+
+        li
+          list-style: disc
+
+    .included-and-not-included
+      @include grid($columns: 1fr 1fr)
+
+      .what-included
+        .name
+          font-size: 1.1rem
+          text-transform: uppercase
+          margin-bottom: 1rem
+          font-weight: 500
+
+        ul
+          li
+            @include flex($justify: flex-start)
+            align-items: flex-start
+            gap: .5rem
+            font-size: 1rem
+            font-weight: 300
+            color: rgba($dark, .8)
+            margin-bottom: .8rem
+
+            i
+              color: $pri
+              font-size: 1.3rem
+
+.ItinerarySection
+  background-color: $light
+  opacity: 0
+  height: 0
+  overflow: hidden
+  transition: .2s
+  pointer-events: none
+
+  &.active
+    overflow: visible
+    pointer-events: auto
+    opacity: 1
+    height: 100%
+
+  .main-title
+    font-size: 1.6rem
+    text-align: left
+    font-weight: 600
+    text-transform: capitalize
+
+    i
+      display: none
+
+  .main-container
+    margin-top: 1rem
+
+    .all-list
+      padding-left: 2rem
+      position: relative
+
+      &::before
+        content: ''
+        position: absolute
+        top: .2rem
+        left: .3rem
+        height: 100%
+        border-left: 1px dashed rgba($dark, .6)
+
+      .ItineraryCardComponent
+        border-bottom: 1px solid rgba($dark, .3)
+        padding: 1.5rem 0
+        cursor: pointer
+
+        &:nth-child(1)
+          padding-top: 0
+
+        &.active
+          .item-title
+            color: $pri
+
+          .arrow
+            transform: rotate(180deg)
+
+          .item-body
+            margin-top: 1rem
+            grid-template-rows: 1fr
+
+            p
+              margin-bottom: 1rem
+
+        .item-title
+          position: relative
+          @include flex($justify: flex-start)
+          gap: .3rem
+
+          .day
+            font-size: 1.3rem
+            font-weight: 500
+
+          .name
+            font-size: 1.1rem
+            font-weight: 500
+
+          .arrow
+            margin-left: 1rem
+            @include trans()
+
+            i
+              font-size: 1.6rem
+
+          .indicator
+            content: ''
+            position: absolute
+            top: 50%
+            left: -2.7rem
+            transform: translateY(-50%)
+            height: 2rem
+            width: 2rem
+            border-radius: 50%
+            background-color: $pri
+            color: $light
+            @include flex($justify: center)
+            font-size: .8rem
+
+        .item-body
+          margin-top: 0
+          overflow: hidden
+          @include trans()
+          display: grid
+          grid-template-rows: 0fr
+          transition: .4s
+
+          p
+            overflow: hidden
+            font-size: 1rem
+            font-weight: 400
+            color: rgba($dark, .9)
+            line-height: 1.5rem
+            text-align: justify
+
+            &:nth-last-child(1)
+              margin-bottom: 0
+
+.DateAndPriceSection
+  background-color: $light
+  opacity: 0
+  height: 0
+  overflow: hidden
+  transition: .2s
+  pointer-events: none
+
+  &.active
+    overflow: visible
+    pointer-events: auto
+    opacity: 1
+    height: 100%
+
+  .main-title
+    font-size: 1.6rem
+    text-align: left
+    font-weight: 600
+    text-transform: capitalize
+
+    i
+      display: none
+
+  .main-container
+    margin-top: 1rem
+
+    h3
+      font-size: 1.6rem
+      font-weight: 500
+      margin-bottom: .7rem
+
+    .price-list
+      @include grid($columns: 1fr 1fr)
+      grid-gap: 10px
+
+      .price-item
+        position: relative
+        padding: 3rem 1rem 2rem
+        background-color: rgba($pri, .85)
+        color: $light
+        text-align: center
+
+        &:nth-child(2)
+          background-color: $pri
+
+        .info
+          position: absolute
+          right: .8rem
+          bottom: .8rem
+          height: 1.7rem
+          width: 1.7rem
+          border: 2px solid $light
+          border-radius: 50%
+          @include flex($justify: center)
+          cursor: pointer
+
+          i
+            font-size: .9rem
+
+        span
+          position: absolute
+          left: .7rem
+          top: .7rem
+
+        h5
+          font-size: 1.1rem
+          margin-bottom: .4rem
+          font-weight: 500
+
+        h4
+          font-size: 1.8rem
+          font-weight: 500
+
+    .year-list
+      position: relative
+
+      .item
+        border-bottom: 1px solid rgba($dark, .3)
+        padding: 1.5rem 0
+        cursor: pointer
+
+        &:nth-child(1)
+          padding-top: 0
+
+        &.active
+          .item-title
+            color: $pri
+
+          .arrow
+            transform: rotate(180deg)
+
+          .item-body
+            max-height: 3000px
+
+        .item-title
+          @include flex($justify: flex-start)
+          gap: .3rem
+
+          .day
+            font-size: 1.3rem
+            font-weight: 500
+
+          .arrow
+            margin-left: 1rem
+            @include trans()
+
+            i
+              font-size: 1.6rem
+
+        .item-body
+          margin-top: 0
+          max-height: 0
+          overflow: hidden
+          @include trans()
+
+          .date-list
+            .date-item-list
+              padding-top: 1.5rem
+              margin-top: 1.5rem
+              border-top: 1px solid rgba($dark, .3)
+              @include grid($columns: 1.5fr 1.5fr 1.5fr 1fr)
+              align-items: center
+
+              &.little
+                .status-sec
+                  span
+                    color: #CC8800
+
+              &.sold-out
+                .button-sec
+                  button
+                    @include customButton($bgcolor: $sec, $color: $light)
+                    background-color: $pri
+                    pointer-events: none
+                    cursor: default
+
+                    &:hover
+                      color: $light
+
+              &.sold-out
+                .status-sec
+                  span
+                    color: #EE1656
+
+              &.available
+                .status-sec
+                  span
+                    color: #249E23
+
+              .date-sec
+                span
+                  font-size: 1.1rem
+                  font-weight: 600
+
+              .price-sec
+                @include flex($justify: flex-start)
+                gap: .6rem
+
+                color: rgba($dark, .8)
+
+                span
+                  padding: .6rem 1.6rem
+                  // background-color: rgba($dark, .07)
+                  border-radius: 50px
+                  font-weight: 600
+                  font-size: 1.3rem
+                  // color: #a70054
+                  color: $sec
+
+              .status-sec
+                text-align: center
+
+                span
+                  font-size: 1.1rem
+                  font-weight: 300
+
+              .button-sec
+                @include flex($justify: flex-end)
+
+                button
+                  @include customButton($bgcolor: $pri, $color: $light)
+                  background-color: $pri
+                  border: 2px solid $pri
+                  text-transform: uppercase
+                  font-weight: 600
+                  font-size: 1rem
+                  height: 45px
+
+.ReviewsSection
+  background-color: #F2F2F2
+  opacity: 0
+  height: 0
+  overflow: hidden
+  transition: .2s
+  pointer-events: none
+
+  &.active
+    overflow: visible
+    pointer-events: auto
+    opacity: 1
+    height: 100%
+
+  .main-title
+    font-size: 2.2rem
+    text-align: center
+    font-weight: 600
+    text-transform: capitalize
+
+  .main-container
+    margin-top: 2rem
+    padding: 2rem
+    border: 1px solid rgba($dark, .6)
+    background-color: $light
+
+    .reviews-list
+      @include grid($columns: 1fr 1fr)
+      margin-top: 2rem
+
+      .item
+        padding: 1rem
+        border: 1px solid rgba($dark, .3)
+        background-color: $light
+        text-align: center
+
+        .star-area
+          @include flex($justify: center)
+          gap: 4px
+          margin-top: 1rem
+
+          i
+            font-size: 1.5rem
+            color: $pri
+
+        .name
+          margin: 1rem 0
+          font-size: 18px
+          font-weight: 500
+
+        .desc
+          font-size: 18px
+          line-height: 1.8rem
+          color: rgba($dark, .8)
+          margin-bottom: 1.5rem
+
+        button
+          width: 100%
+          @include customButton($bgcolor: $pri, $color: $light)
+          border: 3px solid $pri
+          font-size: 1.1rem
+          height: 50px
+          font-weight: 500
+          background-color: $pri
+
+.TripExtensionsComponent
+  background-color: #F2F2F2
+  opacity: 0
+  height: 0
+  overflow: hidden
+  transition: .2s
+  pointer-events: none
+
+  &.active
+    overflow: visible
+    pointer-events: auto
+    opacity: 1
+    height: 100%
+
+  .main-title
+    font-size: 2.2rem
+    text-align: center
+    font-weight: 600
+    text-transform: capitalize
+
+  .main-container
+    margin-top: 2rem
+    padding: 2rem
+    border: 1px solid rgba($dark, .6)
+    background-color: $light
+
+    .trip-extensions-list
+
+      section
+        &:nth-child(1)
+          padding-top: 0
+
+        &:nth-last-child(1)
+          border-bottom: none
+          padding-bottom: 1rem
+
+        &:nth-child(even)
+          .trip-extensions-item
+            @include grid($columns: 2fr 1fr)
+
+            .content
+              grid-area: 1
+
+      .trip-extensions-item
+        @include grid($columns: 1fr 2fr)
+        align-items: flex-start
+
+        .image-area
+          height: 250px
+          width: 100%
+
+          img
+            @include image()
+            object-fit: contain
+
+        .content
+          .trip-extensions-title
+            @include flex($justify: space-between)
+            margin-bottom: .7rem
+
+            h4
+              font-size: 1.3rem
+              font-weight: 500
+
+            .price
+              font-size: 1.4rem
+              font-weight: 600
+              color: $sec
+
+          p
+            font-size: 1rem
+            color: rgba($dark ,.9)
+            font-weight: 300
+            line-height: 1.5rem
+            margin-bottom: 1rem
+
+          ul
+            padding-left: 1.5rem
+            li
+              list-style: disc
+              font-size: 1rem
+              color: rgba($dark ,.9)
+              font-weight: 300
+              margin-bottom: .5rem
+
+        .days-instructions
+          margin-top: 2rem
+
+          .days-item
+            margin-bottom: .6rem
+            cursor: pointer
+
+            &:hover
+              .item-body
+                max-height: 1000px
+                border: 1px solid rgba($dark, .3)
+
+            .item-title
+              padding: 1rem
+              background-color: $pri
+              color: $light
+
+            .item-body
+              border: 1px solid $light
+              max-height: 0
+              overflow: hidden
+              @include trans()
+
+              p
+                padding: 1rem
+                font-size: 1.1rem
+                line-height: 1.5rem
+                font-weight: 300
+                color: rgba($dark, .8)
+                text-align: justify
+                margin-bottom: 1rem
+
+                &:nth-last-child(1)
+                  margin-bottom: 0
+
+.VideosSection
+  background-color: #F2F2F2
+  opacity: 0
+  height: 0
+  overflow: hidden
+  transition: .2s
+  pointer-events: none
+
+  &.active
+    overflow: visible
+    pointer-events: auto
+    opacity: 1
+    height: 100%
+
+  .main-title
+    font-size: 2.2rem
+    text-align: center
+    font-weight: 600
+    text-transform: capitalize
+
+  .main-container
+    margin-top: 2rem
+    padding: 2rem
+    border: 1px solid rgba($dark, .6)
+    background-color: $light
+
+    .videos-list
+      @include grid($columns: 1fr 1fr)
+      grid-gap: 10px
+
+      .video-area
+        @include flex($justify: center)
+        height: 300px
+
+        iframe
+          height: 100%
+          width: 100%
+
+.MoreInfoSection
+  background-color: $light
+  opacity: 0
+  height: 0
+  overflow: hidden
+  transition: .2s
+  pointer-events: none
+
+  &.includeExcludes
+    .TripOverviewMainContent
+      @include grid($columns: 1fr 1fr)
+
+      .IncludesArea
+        ul
+          li
+            list-style: none
+
+            &::before
+              content: "✓"
+              color: $pri
+              font-weight: bold
+              display: inline-block
+              width: 1em
+              margin-left: -1em
+              margin-right: .3rem
+
+      .ExcludeArea
+        ul
+          li
+            list-style: none
+
+            &::before
+              content: "✘"
+              color: red
+              font-weight: bold
+              display: inline-block
+              width: 1em
+              margin-left: -1em
+              margin-right: .3rem
+
+  &.active
+    overflow: visible
+    pointer-events: auto
+    opacity: 1
+    height: 100%
+
+  .main-title
+    font-size: 1.6rem
+    text-align: left
+    font-weight: 600
+    text-transform: capitalize
+
+    i
+      display: none
+
+  .main-container
+    margin-top: 1rem
+
+    h2
+      font-size: 1.4rem
+      font-weight: 600
+      margin-bottom: .6rem
+      margin-top: 1.5rem
+
+    ul
+      padding-left: 1.5rem
+
+      li
+        margin-bottom: .5rem
+        list-style: disc
+        list-style-type: circle
+
+    .more-info-list
+      position: relative
+      // margin-top: 2rem
+
+      .item
+        border-bottom: 1px solid rgba($dark, .3)
+        padding: 1.5rem 0
+        cursor: pointer
+
+        &:nth-last-child(1)
+          border-bottom: none
+          padding-bottom: 0
+
+        &:nth-child(1)
+          padding-top: 0
+
+        &:hover
+          .item-title
+            color: $pri
+
+          .arrow
+            transform: rotate(180deg)
+
+          .item-body
+            max-height: 3000px
+
+        .item-title
+          @include flex($justify: flex-start)
+          gap: .3rem
+
+          .day
+            font-size: 1.3rem
+            font-weight: 500
+
+          .arrow
+            margin-left: 1rem
+            @include trans()
+
+            i
+              font-size: 1.6rem
+
+        .item-body
+          margin-top: 0
+          max-height: 0
+          overflow: hidden
+          @include trans()
+
+          p
+            font-size: 1rem
+            font-weight: 300
+            color: rgba($dark, .8)
+            line-height: 1.5rem
+            margin: 1rem 0
+
+            &:nth-last-child(1)
+              margin-bottom: 0
+
+.GallerySection
+  background-color: #F2F2F2
+
+  .gallery-area
+    margin-top: 2rem
+
+    img
+      @include image()
+      height: 400px
+
+.SearchComponent
+  background-color: $light
+
+  .SearchBannreComponent
+    height: 30vh
+    background-color: #F2F2F2
+    text-align: center
+    @include flex($justify: center)
+
+    h3
+      font-size: 2.5rem
+      margin-bottom: .6rem
+      font-weight: 500
+
+    button
+      font-size: 1.1rem
+      font-weight: 600
+      color: $pri
+      text-decoration: underline
+
+  .search-result-area
+    @include flex($justify: stretch)
+    align-items: flex-start
+    gap: 1rem
+
+    .filter-section-area
+      width: 25%
+
+    .FilterSection
+      width: 100%
+      position: sticky
+      top: 9rem
+      padding: 1rem
+      border: 1px solid rgba($dark, .3)
+      z-index: 2
+
+      .filter-section-close
+        position: absolute
+        top: -2.3rem
+        right: 0
+        height: 2rem
+        width: 2rem
+        background-color: $light
+        @include flex($justify: center)
+        color: $sec
+        border: 2px solid $sec
+        cursor: pointer
+        display: none
+
+        &:hover
+          background-color: $sec
+          color: $light
+
+      .form
+        padding-bottom: 1rem
+        border-bottom: 1px solid rgba($dark, .4)
+        margin-bottom: 1rem
+
+      .SearchButton
+        @include customButton($bgcolor: $pri, $color: $light)
+        width: 100%
+        font-size: 1.1rem
+        height: 3rem
+        font-weight: 600
+        gap: 1rem
+
+      .filter-keyword-sec
+        padding-bottom: 1rem
+        border-bottom: 1px solid rgba($dark, .4)
+        margin-bottom: 1rem
+
+        .filter-title
+          margin-bottom: 1rem
+          font-size: 1.1rem
+          font-weight: 500
+
+        .filter-group
+          @include flex($justify: stretch)
+          height: 45px
+          gap: 10px
+
+          input, select
+            width: 100%
+            height: 100%
+            border: 1px solid rgba($dark, .4)
+            padding: .5rem
+
+          label
+            width: 25%
+            background-color: $pri
+            color: $light
+            height: 100%
+            font-size: 1.4rem
+            @include flex($justify: center)
+            cursor: pointer
+            display: none
+
+      .filter-list-sec
+        // padding-bottom: 1rem
+        // border-bottom: 1px solid rgba($dark, .4)
+        // margin-bottom: 1rem
+
+        .filter-title
+          margin-bottom: 1rem
+          font-size: 1.1rem
+          font-weight: 500
+
+        .filter-list
+          li
+            margin-bottom: 1rem
+            @include flex($justify: flex-start)
+            cursor: pointer
+            width: 100%
+
+            input
+              margin-right: .5rem
+
+            label
+              font-size: 1rem
+              cursor: pointer
+              width: 100%
+              font-weight: 300
+
+    .SearchResultListComponent
+      width: 75%
+
+      .search-filter-title-area
+        @include flex($justify: space-between)
+        margin-bottom: 1rem
+        display: none
+
+        .search-filter-title
+          font-size: 1.5rem
+          font-weight: 500
+
+        .search-filter-btn
+          @include flex($justify: center)
+          height: 2.4rem
+          width: 2.4rem
+          background-color: $pri
+          border-radius: .2rem
+
+          i
+            font-size: 1.1rem
+            color: $light
+
+      .SearchPackageCardComponent
+        padding: 1rem
+        border: 1px solid rgba($dark, .4)
+        border-radius: 4px
+        background-color: $light
+        cursor: pointer
+        @include flex($justify: stretch)
+        align-items: flex-start
+        gap: 1rem
+        margin-bottom: 1rem
+
+        &:hover
+          .image-area
+            img
+              transform: scale(1.1)
+            .month-list
+              height: 100%
+
+            .available
+              opacity: 1
+
+        .image-area
+          overflow: hidden
+          height: 270px
+          width: 40%
+          position: relative
+
+          img
+            @include image()
+            transition: .4s
+
+          .month-list
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 100%
+            @include flex($justify: center)
+            gap: .7rem
+            height: 40px
+            background-color: rgba($pri, .7)
+            color: $light
+            font-size: 13px
+            font-weight: 500
+            z-index: 1
+            @include trans()
+
+          .available
+            position: absolute
+            top: 3rem
+            left: 0
+            width: 100%
+            text-align: center
+            color: $light
+            font-size: 14px
+            font-weight: 500
+            opacity: 0
+            z-index: 2
+            @include trans()
+
+        .content
+          width: 60%
+          color: $darkBg
+
+          .name
+            font-size: 1.2rem
+            font-weight: 500
+            margin: 0 0 .4rem
+
+          .time
+            font-size: 15px
+            text-transform: uppercase
+            color: rgba($dark, .7)
+            font-weight: 500
+
+          .mountain-peak
+            border: 1px solid $dark
+            border-left: none
+            border-right: none
+            padding: 1rem 0
+            margin: 1rem 0
+            @include flex($justify: space-between)
+
+            .height, .diff
+              font-size: 16px
+              font-weight: 500
+              @include flex($justify: flex-start)
+              gap: .4rem
+
+              img
+                height: 1.7rem
+                width: 1.7rem
+                object-fit: contain
+
+            .diff
+              @include flex($justify: flex-end)
+              i
+                margin-left: 6px
+                margin-right: 0
+
+          .desc
+            font-size: 14px
+            line-height: 1.4rem
+            text-align: justify
+            color: rgba($dark, .7)
+            max-height: 4rem
+            overflow: hidden
+
+          .readMore
+            font-size: 16px
+            line-height: 1.4rem
+            text-align: justify
+            color: rgba($dark, .7)
+            margin-bottom: 1rem
+
+          .card-footer
+            @include flex($justify: space-between)
+            margin-top: 1rem
+
+            .package-price
+              @include flex($justify: space-between)
+              width: 100%
+              border-top: 1px solid #000
+              padding-top: 1rem
+
+              .prices
+                color: $sec
+                font-size: 1.3rem
+                font-weight: 500
+
+            .or
+              color: rgba($dark, .3)
+
+            .price
+              padding: .6rem 1rem
+              background-color: rgba($dark, .1)
+              border-radius: 40px
+
+.BloggingPage
+  background-color: #F2F2F2
+
+  .shortcut-buttons
+    padding: 2rem
+    background-color: $darkBg
+
+    .buttons-list
+      @include grid($columns: 1fr 1fr)
+
+      .item
+        padding: 1.5rem
+        background-color: $pri
+        color: $light
+
+        .name
+          font-size: 1.2rem
+          font-weight: 500
+          font-family: $font
+          margin-bottom: .5rem
+
+        p
+          font-size: .9rem
+          font-weight: 600
+          text-align: justify
+
+  &.BloggingDetailsPage
+    .book-list
+      @include flex($justify: center)
+      gap: 2rem
+      flex-wrap: wrap
+      margin-top: 2rem
+
+      .book-card
+        img
+          height: 13rem
+          width: 10rem
+          object-fit: cover
+
+        .name
+          font-size: 1rem
+          font-weight: 400
+          text-align: center
+          margin-top: .5rem
+
+    .blogging-area
+      display: block
+
+      .with-image
+        .about-content
+          text-align: center
+
+        .image
+          margin-bottom: 2rem
+
+          img
+            @include image()
+
+      .blogging-cards-area
+        flex: 100%
+        width: 100%
+
+        h1
+          text-align: center
+
+        p
+          text-align: center
+          font-size: 1rem
+          margin-bottom: 1rem
+          text-align: justify
+
+        .desc
+          text-align: justify
+          line-height: 1.5rem
+          color: rgba($dark, .8)
+          margin-top: .7rem
+
+          img
+            @include image()
+
+      .blogging-search-area
+        flex: 30%
+        width: 100%
+
+        .packageCardComponent
+          margin-bottom: 1rem
+
+  .blogging-area
+    padding: 2rem 0
+    @include flex($justify: stretch)
+    gap: 1rem
+    align-items: flex-start
+
+    .blogging-cards-area
+      width: 75%
+
+      .blogging-small-cards
+        @include grid($columns: 1fr 1fr)
+
+        .BloggingCardComponent
+          border: 1px solid rgba($dark, .3)
+
+          .inner-area
+            position: relative
+            height: 300px
+            border: .8rem solid $light
+
+          .image-area
+            height: 100%
+            width: 100%
+
+            img
+              @include image()
+
+          .name
+            position: absolute
+            top: 0
+            width: 100%
+            padding: 1rem
+            background-color: rgba($pri, .7)
+            color: $light
+            font-weight: 500
+            z-index: 1
+
+          button
+            position: absolute
+            right: 10px
+            bottom: 10px
+            @include customButton($bgcolor: $light, $color: $dark)
+            background-color: $pri
+
+      .blogging-card-list
+        margin-top: 1rem
+
+        .BloggingBigCardComponsnt
+          @include flex($justify: stretch)
+          align-items: flex-start
+          gap: 1rem
+          padding: 1rem
+          border: 1px solid rgba($dark, .3)
+          margin-bottom: 1rem
+          background-color: $light
+          position: relative
+
+          .image-area
+            width: 40%
+            height: 330px
+
+            img
+              @include image()
+
+          .content
+            width: 60%
+            height: 100%
+
+            .card-name
+              font-size: 1.3rem
+              font-weight: 600
+              color: $darkBg
+
+            .cate-name
+              font-size: 1rem
+              color: rgba($dark, .6)
+              margin: .5rem 0 1rem
+
+            .desc
+              font-size: 1rem
+              line-height: 1.4rem
+              font-weight: 300
+              color: rgba($dark, .8)
+              max-height: 200px
+              overflow: hidden
+
+            button
+              position: absolute
+              bottom: 1rem
+              right: 1rem
+              @include customButton($bgcolor: $pri, $color: $light)
+              height: 45px
+              font-weight: 600
+              font-size: 1rem
+
+    .blogging-search-area
+      position: sticky
+      top: 9rem
+      width: 25%
+
+      .blogging-search
+        padding: 1rem
+        border: 1px solid rgba($dark, .3)
+        background-color: $light
+        margin-bottom: 1rem
+
+        .filter-keyword-sec
+          .filter-title
+            margin-bottom: 1rem
+            font-size: 1.1rem
+            font-weight: 500
+
+          .filter-group
+            @include flex($justify: stretch)
+            height: 45px
+            gap: 10px
+
+            input
+              width: 75%
+              height: 100%
+              border: 1px solid rgba($dark, .4)
+              padding: .5rem
+
+            button
+              width: 25%
+              background-color: $pri
+              color: $light
+              height: 100%
+              font-size: 1.4rem
+
+          .all-bloggign-links
+            li
+              font-weight: 300
+              margin-bottom: .5rem
+              text-decoration: underline
+              color: rgba($dark, .77)
+              line-height: 1.4rem
+              cursor: pointer
+
+              a
+                color: rgba($dark, .77)
+
+  .blog-profile
+    margin: 1rem 0
+    padding: 1rem
+    border: 2px solid rgba($dark, .2)
+    background-color: $light
+    @include flex($justify: flex-start)
+    gap: 3rem
+
+    .image
+      height: 10rem
+      width: 10rem
+      border-radius: 50%
+      overflow: hidden
+      margin-left: 2rem
+
+      img
+        @include image()
+
+    .profile-content
+      .written
+        font-weight: 300
+        font-size: .8rem
+
+      .name
+        font-size: 1.4rem
+        font-weight: 600
+        margin: .5rem 0
+
+      .role
+        font-size: 1rem
+        font-weight: 500
+
+  .others-package-list
+    @include grid($columns: 1fr 1fr 1fr)
+
+.FlexibilityPromisePage
+  .FlexibilityPromiseList
+    .FlexibilityPromiseComponent
+      .flexibility-promise-title
+        font-size: 2rem
+        margin-bottom: 1rem
+        text-transform: capitalize
+
+      p
+        margin-bottom: 1rem
+        color: rgba($dark, .8)
+        line-height: 1.5rem
+        font-weight: 300
+
+.teams-popup
+  position: fixed
+  top: 0
+  left: 0
+  height: 100%
+  width: 100%
+  padding: 1rem
+  z-index: 100
+  @include flex($justify: center)
+  pointer-events: none
+  overflow: auto
+
+  &.active
+    pointer-events: auto
+
+    .popup-bg
+      opacity: 1
+
+    .popup-box
+      opacity: 1
+      transform: scale(1)
+
+  .popup-bg
+    position: fixed
+    left: 0
+    top: 0
+    bottom: 0
+    right: 0
+    background-color: rgba($dark, .6)
+    backdrop-filter: blur(10px)
+    opacity: 0
+    z-index: 1
+    transition: .4s
+
+  .popup-box
+    max-width: 50rem
+    width: 100%
+    background-color: $light
+    box-shadow: 0 0 10px rgba($dark, .1)
+    padding: 1rem
+    border-radius: 1rem
+    position: relative
+    z-index: 2
+    transform: scale(1.1)
+    opacity: 0
+    transition: .4s
+
+    .popup-close
+      position: absolute
+      right: 0
+      top: -2.5rem
+      height: 2rem
+      width: 2rem
+      border-radius: 50%
+      background-color: rgba($light, .8)
+      @include flex($justify: center)
+      color: #a00000
+      cursor: pointer
+
+      &:hover
+        background-color: rgba($light, 1)
+
+      i
+        font-size: 1.2rem
+
+    .popup-container
+      @include flex($justify: stretch)
+      align-items: flex-start
+      gap: 1rem
+      width: 100%
+
+      .team-image
+        max-width: 15rem
+        height: 20rem
+        width: 100%
+
+        img
+          @include image()
+          border-radius: 1rem
+
+      .details
+        max-width: calc( 100% - 15rem )
+
+        .social-media
+          margin-top: .5rem
+          @include flex($justify: flex-start)
+          gap: 1rem
+          padding-left: 0
+          position: relative
+          z-index: 2
+
+          li
+            a
+              color: $dark
+              @include trans()
+
+        .name
+          font-size: 1.2rem
+          font-weight: 600
+          margin-bottom: .3rem
+
+        .designation
+          font-size: .9rem
+          color: rgba($dark, .7)
+          margin-bottom: 1rem
+
+        .desc
+          font-size: .9rem
+          line-height: 1.5rem
+          text-align: justify
+
+.MeetTheTeamPage
+  .teams-area
+    .all-teams-list
+      @include grid($columns: 1fr 1fr 1fr)
+      margin-top: 3rem
+
+.AwesomenessGuaranteePage
+  .awesomeness-guarantee-list
+    .awesomeness-guarantee-item
+      margin-bottom: 2rem
+
+      .guarantee-title
+        font-size: 2rem
+        margin-bottom: 1rem
+
+      .guarantee-image
+        width: 100%
+        @include flex($justify: center)
+        margin: 2rem 0
+
+        img
+          height: 20rem
+          width: 20rem
+          object-fit: contain
+
+      p
+        margin-bottom: 1rem
+        color: rgba($dark, .8)
+        line-height: 1.5rem
+        font-weight: 300
+
+.package-section
+  margin-top: 4rem
+
+  .item
+    .top-item
+      position: relative
+      height: 36rem
+      margin-bottom: 3rem
+
+      .image
+        height: 100%
+        width: 100%
+
+        &::before
+          content: ''
+          position: absolute
+          left: 0
+          top: 0
+          width: 100%
+          height: 100%
+          background: linear-gradient(180deg, rgba(#000000, .3), rgba(#000000, .1))
+          z-index: 1
+
+        img
+          height: 100%
+          width: 100%
+          object-fit: cover
+
+      .content
+        position: absolute
+        top: 1rem
+        left: 1rem
+        z-index: 2
+
+        .package-title
+          font-size: 6rem
+          font-weight: 900
+          line-height: 5rem
+          text-transform: uppercase
+          color: $light
+          margin-bottom: .4rem
+
+        h5
+          font-weight: 400
+          font-size: 1.5rem
+          color: $light
+          display: flex
+          align-items: center
+          margin: 0
+
+          i
+            font-size: 1.4rem
+            margin-left: 1rem
+
+      .create-button
+        position: absolute
+        top: 100%
+        left: 50%
+        transform: translate(-50%, -50%)
+        padding: 1rem 2rem
+        border-radius: 5rem
+        font-size: 1rem
+        font-weight: 600
+        border: 3px solid #ffffff
+        color: #ffffff
+        text-transform: uppercase
+        background-color: #29ACED
+        display: flex
+        align-items: center
+        transition: .4s
+        z-index: 2
+        cursor: pointer
+
+        &:hover
+          background-color: #e99619
+
+        i
+          margin-left: 1rem
+          font-size: 1.1rem
+
+    .bottom-item
+      display: grid
+      grid-template-columns: 1fr 1fr 1fr
+      grid-gap: 1rem
+
+      .small-item
+        width: 100%
+        height: 17rem
+        position: relative
+        overflow: hidden
+
+        &:hover > img
+          transform: scale(1.1)
+
+        &::before
+          content: ''
+          position: absolute
+          left: 0
+          top: 0
+          width: 100%
+          height: 100%
+          background: linear-gradient(0deg, rgba(#000000, .5), rgba(#000000, .1))
+          z-index: 1
+
+        .small-item-image
+          height: 100%
+          width: 100%
+          object-fit: cover
+          transition: .4s
+
+        .content
+          position: absolute
+          bottom: 0
+          left: 0
+          padding: .7rem
+          width: 100%
+          z-index: 2
+
+          .package-name
+            font-size: 1.3rem
+            font-weight: 600
+            margin-bottom: .6rem
+            color: #ffffff
+
+          .small-item-footer
+            width: 100%
+
+            ul
+              display: grid
+              grid-template-columns: repeat(3, 1fr)
+              grid-gap: .5rem
+
+            li
+              display: flex
+              justify-content: flex-start
+              color: #ffffff
+              gap: .3rem
+
+              img
+                height: 2rem
+                width: 2rem
+                object-fit: contain
+
+              .name
+                font-size: .77rem
+
+                h6
+                  font-size: .9rem
+                  width: 100%
+                  font-weight: 400
+                  line-height: .7rem
+                  margin: 0
+
+.TestPage
+  position: relative
+  height: 70vh
+  height: 45rem
+  background-position: 0 10
+  background-size: cover
+  background-repeat: no-repeat
+  width: 100%
+  display: flex
+  justify-content: stretch
+  align-items: flex-end
+  margin-top: 3rem
+
+  .background-image
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    background-position: 0 10
+    background-size: cover
+    background-repeat: no-repeat
+    z-index: 1
+
+  .wrapper
+    width: 100%
+
+  .itemsList
+    position: relative
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: 2rem
+    margin-bottom: 4rem
+    z-index: 2
+
+    .item
+      background-color: #ffffff
+      border-top: .34rem solid #29ACED
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-direction: column
+      height: 27rem
+
+      .icon-sec
+        height: 6.5rem
+        width: 6.5rem
+        border-radius: 50%
+        overflow: hidden
+        display: flex
+        justify-content: center
+        align-items: center
+        background-color: #29ACED
+
+        img
+          height: 60%
+          width: 60%
+          object-fit: contain
+
+      .content
+        margin-top: 2rem
+        max-width: 20rem
+        text-align: center
+
+        .item-title
+          font-size: 1.2rem
+          text-transform: uppercase
+          font-weight: 500
+
+        .desc
+          line-height: 1.7rem
+          font-size: 1rem
+          margin: 1rem 0 1.5rem
+          color: rgba(#000000, .7)
+          max-height: 1rem
+
+        .learn
+          margin-top: 2rem
+          font-weight: 600
+          font-size: 1rem
+          text-transform: uppercase
+          color: #29ACED
+
+.test-pages
+  background-color: #fff
+
+  .package-details-pages
+    .package-title-area
+      text-align: center
+      margin-bottom: 2rem
+
+      .package-title
+        font-size: 2rem
+        text-transform: uppercase
+        color: #000000
+        letter-spacing: 1.3px
+
+      h4
+        font-weight: 300
+        text-transform: uppercase
+        font-size: 1.2rem
+
+    .section-title-area
+      position: relative
+
+      .section-title
+        font-size: 1.4rem
+        text-transform: uppercase
+        font-weight: 600
+        text-align: center
+
+    .package-details-section
+      display: flex
+      justify-content: stretch
+      gap: 2rem
+
+      .image-area
+        flex: 60%
+        height: 30rem
+        width: 100%
+
+        img
+          height: 100%
+          width: 100%
+          object-fit: cover
+
+      .package-details-area
+        flex: 40%
+
+        .package-sec-title
+          font-size: 1rem
+          font-weight: 600
+          text-transform: uppercase
+
+        .price-sec
+          margin-bottom: 1rem
+          padding-bottom: 1rem
+          border-bottom: .1rem solid lighten(#000, 80%)
+
+          .price
+            font-size: 2rem
+            font-weight: 600
+            color: #21ACEC
+
+          h5
+            color: #21ACEC
+            font-size: 1.2rem
+
+        .button-group
+          margin-bottom: 1rem
+          padding-bottom: 1rem
+          border-bottom: .1rem solid lighten(#000, 80%)
+          @include flex($justify: center)
+
+          .button-area
+            height: 3rem
+            width: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+            border-radius: 3rem
+            overflow: hidden
+
+            a
+              height: 100%
+              flex: 50%
+              width: 100%
+
+              &:nth-last-child(1)
+                button
+                  background-color: #444444
+                  transition: .4s
+
+                  &:hover
+                    background-color: #e99619
+
+            button
+              width: 100%
+              height: 100%
+              background-color: #21ACEC
+              color: #ffffff
+              font-size: 1.1rem
+              font-weight: 600
+              text-transform: uppercase
+              cursor: pointer
+
+        .about-trip
+          .description
+            font-size: 1rem
+            color: lighten(#000000, 30%)
+            line-height: 1.6rem
+            font-weight: 300
+            margin: 1rem 0
+
+          ul
+            margin-bottom: 1rem
+            li
+              font-size: .8rem
+              margin-bottom: .3rem
+
+              &.list-title
+                font-weight: 600
+
+    .package-main-details
+      .package-details-bg-image
+        height: 40rem
+        width: 100%
+
+        img
+          @include image()
+
+    .package-all-details
+      max-width: 900px
+      width: 100%
+      margin: 0 auto
+
+      .overview
+        background-color: $light
+
+        padding: 2rem
+
+        .other-info
+          @include flex($justify: flex-end)
+          position: absolute
+          right: 0
+          top: 50%
+          transform: translateY(-50%)
+          gap: 1rem
+
+          li
+            @include flex($justify: flex-start)
+            gap: .5rem
+
+            .text
+              font-size: .9rem
+              font-weight: 300
+              line-height: .9rem
+
+              span
+                font-size: .66rem
+
+            .icon
+              height: 2rem
+              width: 2rem
+
+              img
+                @include image()
+                object-fit: contain
+
+        .descriptions
+          margin: 2rem 0 1rem
+          line-height: 1.6rem
+          font-weight: 300
+          font-size: .96rem
+
+    .preparation
+      background-color: #F5F8FC
+
+      .technical-experience
+        @include flex($justify: stretch)
+        gap: 1rem
+        padding: 2rem
+
+        .icon
+          height: 5rem
+          width: 5rem
+          @include flex($justify: center)
+          border-radius: 50%
+          background-color: #21ACEC
+
+          img
+            height: 70%
+            width: 70%
+            object-fit: contain
+
+        .text
+          width: calc(100% - 5rem)
+
+          h4
+            font-size: 1rem
+            text-transform: uppercase
+            margin-bottom: .5rem
+
+          p
+            font-size: 1.1rem
+            line-height: 1.5rem
+            font-weight: 300
+
+      .preparation-filter-buttons
+        @include flex($justify: center)
+        gap: .5rem
+        margin-top: 2rem
+
+        .filterBtns
+          height: 4rem
+          width: 10rem
+          font-size: 1.1rem
+          font-weight: 600
+          cursor: pointer
+          border-bottom: 3px solid transparent
+
+          &.active
+            border-color: #21ACEC
+            background-color: rgba(#21ACEC, .05)
+
+      .filter-section
+        position: fixed
+        opacity: 0
+        pointer-events: none
+        @include trans()
+
+        &.active
+          position: static
+          padding: 2rem
+          opacity: 1
+          pointer-events: auto
+
+        .list
+          li
+            border-top: 1px solid rgba(#000000, .2)
+            cursor: pointer
+
+            &:nth-last-child(1)
+              border-bottom: 1px solid rgba(#000000, .2)
+
+            &.active
+              .filter-title
+                .icon.rotate
+                  transform: rotate(0)
+
+              .filter-details
+                max-height: 1000px
+
+            .filter-title
+              @include flex($justify: flex-start)
+              padding: 1rem
+              color: rgba($dark, .65)
+
+              span
+                font-weight: 600
+                color: $dark
+
+              .icon
+                color: $dark
+                font-size: 1.2rem
+                transition: .4s ease-in-out
+                margin-right: .8rem
+
+                &.rotate
+                  font-size: 1.4rem
+                  margin-right: 1rem
+                  transform: rotate(45deg)
+
+            .filter-details
+              max-height: 0
+              overflow: hidden
+              transition: .4s ease-in-out
+
+              .details
+                padding: .5rem 1rem 1rem
+                padding-left: 3rem
+                font-weight: 300
+
+    .popular-trips
+      background-color: #F5F8FC
+
+      .section-title-area
+        font-size: 1.4rem
+        text-transform: uppercase
+        color: #000000
+        letter-spacing: 1.3px
+        margin-bottom: 2rem
+
+      .popular-trips-list
+        @include grid($columns: 1fr 1fr 1fr 1fr)
+
+        .item
+          .image
+            height: 12rem
+            width: 100%
+
+            img
+              @include image()
+
+          .content
+            background-color: #ffffff
+
+            .trip-title
+              padding: 1.5rem
+              font-size: 1rem
+              font-weight: 600
+              color: #21ACEC
+
+            button
+              background: none
+              padding: 1.5rem
+              width: 100%
+              border-top: 1px solid lighten(#000, 90%)
+              text-transform: uppercase
+              font-weight: 500
+
+    .gallery-section
+      .section-title-area
+        font-size: 1.4rem
+        text-transform: uppercase
+        color: #000000
+        letter-spacing: 1.3px
+        margin-bottom: 2rem
+
+      .images-list
+        @include grid($columns: 1fr 1fr 1fr 1fr)
+
+      .image
+        height: 10rem
+        width: 100%
+
+        img
+          @include image()
+
+.book-now-form-popup
+  position: fixed
+  top: 0
+  left: 0
+  height: 100%
+  width: 100%
+  z-index: 100
+  @include flex($justify: center)
+  align-items: flex-start
+  padding: 3rem 1rem
+  @include trans()
+  pointer-events: none
+  overflow-x: auto
+
+  &.active
+    pointer-events: auto
+
+    .form-popup-bg
+      opacity: 1
+
+    .form-form-container
+      transform: translate(0) scale(1)
+      opacity: 1
+
+  .form-popup-close
+    position: absolute
+    top: 0
+    right: 1rem
+    transform: translateY(-50%)
+    height: 2rem
+    width: 2rem
+    border-radius: 50%
+    background-color: #d00000
+    color: $light
+    @include flex($justify: center)
+    cursor: pointer
+
+    &:hover
+      background-color: darken(#d00000, 5%)
+
+  .form-popup-bg
+    position: fixed
+    height: 100%
+    width: 100%
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background-color: rgba($dark, .6)
+    backdrop-filter: blur(10px)
+    z-index: 1
+    opacity: 0
+    @include trans()
+
+  .form-form-container
+    position: relative
+    background-color: #ffffff
+    padding: 2rem
+    box-shadow: 0 0 10px rgba($dark, .5)
+    z-index: 2
+    max-width: 500px
+    border-radius: 1rem
+    transform: translate(-10px) scale(1.2)
+    @include trans()
+    opacity: 0
+
+.popup-form
+  .form-inputs
+    margin-top: 2rem
+
+    .input-group
+      @include flex($justify: space-between)
+      margin-bottom: 2rem
+
+      .group
+        width: 46%
+
+    .group
+      position: relative
+      height: 57px
+      width: 100%
+      border-bottom: 1px solid $pri
+      display: flex
+      align-items: flex-end
+
+      label
+        position: absolute
+        top: 0
+        left: 0
+        font-size: 12px
+        text-transform: uppercase
+
+      input, textarea
+        height: 70%
+        width: 100%
+        padding: 1rem
+        font-size: 14px
+
+      &.message-box
+        height: 10rem
+
+        textarea
+          height: 100%
+          padding-top: 1.5rem
+
+  .submit-btn
+    font-weight: 600
+    margin-top: 1rem
+    padding: .5rem 1rem
+    background-color: #21ACEC
+    color: $light
+    font-size: 16px
+    @include flex($justify: flex-start)
+    gap: 10px
+    cursor: pointer
+
+    &:hover
+      background-color: darken(#21ACEC, 5%)
+
+    img
+      height: 20px
+      width: 20px
+      margin-left: 5px
+      @include trans()
+
+    &:hover
+      img
+        transform: translateX(4px)
+
+.inquire-form-popup
+  position: fixed
+  right: -500px
+  top: 0
+  max-width: 500px
+  width: 100%
+  height: 100%
+  background-color: $light
+  box-shadow: -4px 0 10px rgba($dark, .1)
+  pointer-events: none
+  z-index: 100
+  @include trans()
+  overflow-y: auto
+
+  &.active
+    right: 0
+    pointer-events: auto
+
+    .form-popup-bg
+      opacity: 0
+
+  .form-popup-close
+    position: absolute
+    top: 1rem
+    right: 2rem
+    height: 2rem
+    width: 2rem
+    border-radius: 50%
+    background-color: #d00000
+    color: $light
+    @include flex($justify: center)
+    cursor: pointer
+    z-index: 3
+
+    &:hover
+      background-color: darken(#d00000, 5%)
+
+  .form-popup-bg
+    position: fixed
+    height: 100%
+    width: 100%
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background-color: rgba($dark, .6)
+    backdrop-filter: blur(10px)
+    z-index: 1
+    opacity: 0
+    @include trans()
+
+  .popup-form
+    position: relative
+    height: 100vh
+    background-color: #ffffff
+    padding: 2rem
+    z-index: 2
+
+  .contact-title
+    .title-area
+      @include flex($justify: space-between)
+      margin-bottom: .5rem
+
+    .closeContact
+      height: 30px
+      width: 30px
+      border-radius: 50%
+      @include flex($justify: center)
+      color: $light
+      background-color: rgba($sec, .9)
+      cursor: pointer
+
+    h2
+      font-size: 20px
+      font-weight: 500
+
+    p
+      font-size: 13px
+      margin-top: 5px
+      line-height: 1.2rem
+
+.bookingPopupForm
+  position: fixed
+  top: 0
+  left: 0
+  height: 100%
+  width: 100%
+  @include flex($justify: center)
+  align-items: flex-start
+  z-index: 100
+  pointer-events: none
+  padding: 4rem 0
+  overflow: auto
+
+  &.active
+    pointer-events: auto
+
+    .bookingPopupFormBg
+      opacity: 1
+
+    .start-booking
+      opacity: 1
+      transform: scale(1)
+
+  .bookingPopupFormBg
+    position: fixed
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    background-color: rgba($dark, .5)
+    backdrop-filter: blur(5px)
+    opacity: 0
+    z-index: 1
+    transition: 0.4s cubic-bezier(0.74, 0.29, 0.28, 0.82)
+
+  .start-booking
+    position: relative
+    z-index: 2
+    opacity: 0
+    transform: scale(.95)
+    transition: 0.4s cubic-bezier(0.74, 0.29, 0.28, 0.82)
+
+    .bookingPopupFormClose
+      position: absolute
+      top: -2.5rem
+      right: 0
+      height: 2rem
+      width: 2rem
+      background-color: $light
+      @include flex($justify: center)
+      cursor: pointer
+      font-size: 1.3rem
+
+      &:hover
+        background-color: $sec
+        color: $light
+
+.CertificatesPartners
+  .list
+    margin-top: 2rem
+
+    .mySwiper
+      .swiper-slide
+        width: auto
+
+    .item
+      width: auto
+      height: 3rem
+
+      img
+        height: 90%
+        width: 90%
+        object-fit: contain
+
+.VideoBanner
+  .video-popup
+    position: fixed
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    padding: 1rem
+    z-index: 100
+    @include flex($justify: center)
+    pointer-events: none
+
+    &.active
+      pointer-events: auto
+
+      .popup-bg
+        opacity: 1
+
+      .popup-box
+        opacity: 1
+        transform: scale(1)
+
+    .popup-bg
+      position: absolute
+      left: 0
+      top: 0
+      bottom: 0
+      right: 0
+      background-color: rgba($dark, .6)
+      backdrop-filter: blur(10px)
+      opacity: 0
+      z-index: 1
+      transition: .4s
+
+    .popup-box
+      max-width: 50rem
+      width: 100%
+      height: 30rem
+      background-color: $light
+      box-shadow: 0 0 10px rgba($dark, .1)
+      padding: 1rem
+      border-radius: 1rem
+      position: relative
+      z-index: 2
+      transform: scale(1.1)
+      opacity: 0
+      transition: .4s
+
+      .popup-close
+        position: absolute
+        right: 0
+        top: -2.5rem
+        height: 2rem
+        width: 2rem
+        border-radius: 50%
+        background-color: rgba($light, .8)
+        @include flex($justify: center)
+        color: #a00000
+        cursor: pointer
+
+        &:hover
+          background-color: rgba($light, 1)
+
+        i
+          font-size: 1.2rem
+
+      .popup-container
+        height: 100%
+        @include flex($justify: stretch)
+        align-items: flex-start
+        gap: 1rem
+
+        @keyframes videoLoader
+          0%
+            transform: translate(-50%, -50%) rotate(0)
+
+          100%
+            transform: translate(-50%, -50%) rotate(360deg)
+
+        .loader
+          height: 3rem
+          width: 3rem
+          border-radius: 50%
+          position: absolute
+          left: 50%
+          top: 50%
+          transform: translate(-50%, -50%)
+          border: 4px solid $pri
+          border-left-color: $light
+          border-right-color: $light
+          animation: videoLoader 1s infinite
+          z-index: 1
+
+        iframe
+          position: relative
+          z-index: 2
+          height: 100%
+          width: 100%
+
+  .video-image-area
+    position: relative
+
+    .image
+      height: 40rem
+
+      img
+        @include image()
+
+    &::after
+      content: ''
+      position: absolute
+      @include dark($opacity: .3)
+      z-index: 1
+
+    .content
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      max-width: 40rem
+      z-index: 2
+      color: $light
+      line-height: 3.5rem
+      padding: 2rem
+
+      .video-title
+        font-size: 3rem
+
+      .button-group
+        margin-top: 1rem
+        @include flex($justify: flex-start)
+        flex-wrap: wrap
+        gap: 2rem
+
+        .explore
+          @include customButton($bgcolor: $pri, $color: $light)
+
+        @keyframes circleAnimate
+          0%
+            transform: translate(-50%, -50%) scale(0.6)
+            opacity: 1
+
+          100%
+            transform: translate(-50%, -50%) scale(1.7)
+            opacity: 0
+
+        .video-play-btn
+          height: 3rem
+          width: 3rem
+          border-radius: 50%
+          background-color: $light
+          @include flex($justify: center)
+          position: relative
+          cursor: pointer
+
+          &::after,
+          &::before
+            content: ''
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%) scale(0.6)
+            height: 2.3rem
+            width: 2.3rem
+            border-radius: 50%
+            border: .14rem solid $light
+            opacity: 1
+            animation: circleAnimate 1.8s ease-in-out infinite
+
+          &::before
+            height: 3rem
+            width: 3rem
+
+          i
+            font-size: 1rem
+
+.OurPartners
+  position: relative
+
+  section
+    padding-top: 0
+
+  .title
+    color: $dark
+    margin-bottom: 1rem
+    font-size: 1.4rem
+    font-weight: 700
+    text-align: left
+
+  .list
+    .mySwiper
+      .swiper-slide
+        width: auto
+
+    .item
+      width: auto
+      height: 5rem
+      width: 100%
+      background-color: $light
+      padding: .5rem
+      border-radius: .5rem
+
+      img
+        height: 100%
+        width: 100%
+        object-fit: contain
+
+.searched-data-page
+  .page-banner
+    background: #eee
+
+    .wrapper
+      background: none
+
+.package-search-area
+  border-bottom: none
+  width: 100%
+
+  .form
+    width: 100%
+
+.package-search
+  @include flex($justify: center)
+  background-color: $light
+  margin: 50px 0
+  border-radius: 5px
+
+  .group
+    position: relative
+    height: 50px
+    width: 100%
+    @include flex($justify: center)
+    padding: 0 .5rem 0 1.5rem
+
+    &:nth-child(1)
+      &::after
+        display: none
+
+    &::after
+      content: ""
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+      height: 70%
+      width: 1px
+      background-color: rgba($dark, .3)
+
+    select
+      color: $para
+
+    input, select
+      width: 100%
+      height: 100%
+      padding: .5rem 1rem
+      color: $para
+
+    .icon
+      position: absolute
+      left: 10px
+      top: 50%
+      transform: translateY(-50%)
+      @include flex($justify: center)
+
+  button
+    @include customButton($bgcolor: $btn, $color: $light )
+    height: 50px
+    cursor: pointer
+    border-radius: 0 5px 5px 0
+    position: relative
+    @include flex($justify: center)
+    gap: 10px
+
+    &.active
+      pointer-events: none
+      opacity: .8
+
+      &::before
+        display: block
+
+    &::before
+      content: ''
+      height: 25px
+      width: 25px
+      border: 2px solid transparent
+      border-top: 2px solid $light
+      border-bottom: 2px solid $light
+      border-radius: 50%
+      animation: loadingBtn .8s infinite cubic-bezier(0.77, 0, 0.175, 1)
+      display: none
+
+.recommended-trekking-gears
+  .gear-list
+    @include grid($columns: 1fr 1fr)
+
+    .item
+      @include flex($justify: stretch)
+      align-items: flex-start
+      gap: 1rem
+      width: 100%
+      padding: 1rem
+      box-shadow: 0 0 10px rgba($dark, .1)
+      border-radius: 1rem
+
+      .team-image
+        max-width: 15rem
+        min-height: 17rem
+        max-height: 20rem
+        height: 100%
+        width: 100%
+
+        img
+          @include image()
+          border-radius: 1rem
+          object-fit: contain
+
+      .details
+        max-width: calc( 100% - 15rem )
+
+        .name
+          font-size: 1.2rem
+          font-weight: 600
+          margin-bottom: .3rem
+
+        .designation
+          font-size: .9rem
+          color: rgba($dark, .7)
+          margin-bottom: 1rem
+
+        ul
+          padding-left: 1.1rem
+
+          li
+            font-size: .9rem
+            line-height: 1.5rem
+            list-style: decimal
+
+@keyframes loadingBtn
+  0%
+    transform: rotate(0)
+
+  100%
+    transform: rotate(360deg)
+
+@media only screen and ( max-width: 800px )
+  .package-search
+    flex-direction: column
+
+    .group
+      &::after
+        height: 1px
+        width: 100%
+        left: 0
+        top: 0%
+        transform: translateY(0%)
+
+    button
+      width: 100%
+      border-radius: 4px

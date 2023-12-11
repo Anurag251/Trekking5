@@ -1,0 +1,22 @@
+@use '../helpers/_mixin' as *
+@use '../layout/_grid' as *
+@use '../helpers/_variables' as *
+
+.recommended-for-you
+  .preview-card
+    .image-box
+      height: 300px
+  
+  .mySwiper
+    .swiper-wrapper
+      padding: 1rem 0
+
+  .big-card
+    .content-area
+      background-color: $light
+
+@media only screen and ( max-width: 420px)
+  .recommended-for-you
+    .preview-card
+      .image-box
+        height: 200px

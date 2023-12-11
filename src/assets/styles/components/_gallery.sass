@@ -1,0 +1,47 @@
+@use '../helpers/_mixin' as *
+@use '../layout/_grid' as *
+@use '../helpers/_variables' as *
+
+.gallery-page
+  margin: 2rem 0 3rem
+
+  .filter
+    @include flex($justify: center)
+    gap: 25px
+    margin-bottom: 2rem
+
+    button
+      font-size: 20px
+      position: relative
+      color: rgba($dark, .6)
+      padding: .2rem 0
+      cursor: pointer
+
+      &::before
+        content: ''
+        position: absolute
+        left: 0
+        bottom: 0
+        height: 3px
+        width: 0
+        background-color: $dark
+        @include fastTrans()
+
+      &.active
+        font-weight: 600
+        color: rgba($dark, .9)
+
+        &::before
+          width: 20px
+
+  .gallery-list
+    @include grid($columns: 1fr 1fr 1fr)
+
+    .gallery-card
+      height: 230px
+      width: 100%
+      overflow: hidden
+      border-radius: 20px
+
+      img
+        @include image()

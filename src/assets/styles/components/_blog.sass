@@ -1,0 +1,105 @@
+@use '../helpers/_mixin' as *
+@use '../layout/_grid' as *
+@use '../helpers/_variables' as *
+
+/*********************      news-events      ***********************/
+.news-events
+  .switch-btn
+    @include flex($justify: center)
+    margin-bottom: 2rem
+
+    li
+      padding: .5rem 1.5rem
+      border-radius: 15px
+      background-color: #CBCBE3
+      color: $dark
+      margin: .5rem
+      font-weight: 600
+      cursor: pointer
+
+      &.active
+        color: $light
+        background-color: $pri
+
+  .list
+    @include grid($columns: 1fr 1fr)
+
+    .item
+      position: relative
+      height: 350px
+
+      &:hover
+        .image
+          .img
+            transform: scale(1.1)
+            transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95)
+
+      .image
+        height: 100%
+        width: 100%
+        overflow: hidden
+
+        .img
+          @include bgImage()
+          height: 100%
+          width: 100%
+
+      .details
+        position: absolute
+        left: 0
+        top: 0
+        max-width: 350px
+        width: 100%
+        background-color: rgba($dark, .55)
+        backdrop-filter: blur(4px)
+        padding: 1rem
+        color: $light
+
+        .date-time
+          @include flex($justify: flex-start)
+
+          .date
+            text-align: center
+
+            .day
+              font-size: 20px
+
+            .month
+              font-size: 14px
+              text-transform: uppercase
+              font-weight: 300
+
+          .line
+            height: 40px
+            width: 1px
+            background-color: $light
+            margin: 0 1rem
+
+          .time
+            .hrs
+              margin-bottom: 6px
+            .hrs, .loc
+              font-size: 14px
+              @include flex($justify: flex-start)
+              font-weight: 300
+
+              i
+                margin-right: 6px
+                font-size: 13px
+
+        .name
+          margin: 1rem 0 .6rem
+          font-weight: 500
+
+        p
+          font-size: 14px
+          font-weight: 300
+          margin-bottom: 1rem
+          line-height: 1.5rem
+          letter-spacing: 1px
+          max-height: 100px
+          overflow: hidden
+          text-align: justify
+
+        button
+          @include customButton($bgcolor: $sec, $color: $light)

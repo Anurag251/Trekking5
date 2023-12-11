@@ -1,0 +1,92 @@
+@use '../helpers/_mixin' as *
+@use '../layout/_grid' as *
+@use '../helpers/_variables' as *
+
+.about-page
+  &.thisIsPage
+    .section
+      @include grid($columns: 1fr)
+
+      .text-sec
+        grid-area: 2
+
+      .image-sec
+        height: 630px
+
+        img
+          &:nth-child(1)
+            height: 40%
+
+          &:nth-child(2)
+            height: 55%
+
+          &:nth-child(3)
+            height: 55%
+
+          &:nth-child(4)
+            height: 40%
+
+  .section
+    @include grid($columns: 1fr 1.5fr)
+
+    .text-sec
+      .sec-title
+        color: $pri
+        font-size: 24px
+        font-weight: 500
+        margin-bottom: 10px
+
+      p
+        font-size: 17px
+        color: $para
+        margin-bottom: 1rem
+        line-height: 1.5rem
+        text-align: justify
+
+        &.desc
+          max-height: 450px
+          overflow: hidden
+
+      .readMore
+        @include customButton($bgcolor: $pri, $color: $light)
+
+    .image-sec
+      height: 530px
+      width: 100%
+      position: relative
+
+      img
+        position: absolute
+        object-fit: cover
+
+        &:nth-child(1)
+          top: 0
+          left: 0
+          height: 197px
+          width: 44%
+          border-radius: 30px 0 30px 0
+          z-index: 1
+
+        &:nth-child(2)
+          top: 0
+          right: 0
+          height: 315px
+          width: 53%
+          border-radius: 0 30px 0 0
+          z-index: 2
+
+        &:nth-child(3)
+          bottom: 0
+          left: 0
+          height: 315px
+          width: 53%
+          border-radius: 0 0 0 30px
+          z-index: 1
+
+        &:nth-child(4)
+          bottom: 0
+          right: 0
+          height: 197px
+          width: 44%
+          border-radius: 30px 0 30px 0
+          z-index: 1

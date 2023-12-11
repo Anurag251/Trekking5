@@ -1,0 +1,38 @@
+@use '../helpers/_mixin' as *
+@use '../layout/_grid' as *
+@use '../helpers/_variables' as *
+
+.page-details
+  margin-top: 1rem
+
+.page-title
+  height: 300px
+  width: 100%
+  @include bgImage()
+  @include flex($justify: center)
+  border-radius: 30px
+  position: relative
+  overflow: hidden
+
+  &::after
+    content: ''
+    @include dark($opacity: .4)
+
+  .content
+    max-width: 60%
+    width: 100%
+    text-align: center
+    color: $light
+    position: relative
+    z-index: 2
+
+    h6
+      font-size: 16px
+      text-transform: uppercase
+      letter-spacing: 2px
+      font-weight: 400
+
+    h2
+      font-size: 45px
+      text-transform: uppercase
+      line-height: 3rem

@@ -1,0 +1,72 @@
+@use '../helpers/_mixin' as *
+@use '../layout/_grid' as *
+@use '../helpers/_variables' as *
+
+.special-package
+  .list
+    @include grid($columns: 1fr 1fr 1fr)
+
+    .item
+      box-shadow: 0 4px 20px rgba($dark, .1)
+      background-color: $light
+
+      &:hover
+        .image-sec
+          img
+            transform: scale(1.1)
+
+      .image-sec
+        height: 230px
+        width: 100%
+        overflow: hidden
+
+        img
+          height: 100%
+          width: 100%
+          object-fit: cover
+          @include trans()
+
+      .text-sec
+        padding: 1rem
+
+        .days
+          padding: .2rem .4rem
+          background-color: rgba($pri, .2)
+          font-size: 12px
+          display: inline-block
+          color: $dark
+          margin-bottom: .4rem
+
+        .name
+          font-size: 18px
+          font-weight: 500
+          color: $pri
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
+          max-width: 300px
+
+        .price
+          font-size: 20px
+          color: #a00000
+          margin-bottom: .6rem
+
+          span
+            font-size: 14px
+            font-weight: 400
+            color: #2D0000
+
+        p
+          padding: .1rem 0 1rem
+          font-weight: 400
+          font-size: 16px
+          line-height: 152.9%
+          color: $para
+          max-height: 100px
+          overflow: hidden
+          margin-bottom: .7rem
+          text-align: justify
+
+        button
+          @include customButton($bgcolor: $pri, $color: $light)
+          padding: .3rem 1rem

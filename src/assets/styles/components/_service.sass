@@ -1,0 +1,65 @@
+@use '../helpers/_variables' as *
+@use '../layout/_grid' as *
+@use '../helpers/_mixin' as *
+
+.all-services
+  margin-bottom: 3rem
+
+  .services-filter
+    margin: 2rem 0 1.5rem
+    @include flex($justify: center)
+    gap: 2rem
+
+  .service-list
+    @include grid($columns: 1fr 1fr 1fr)
+
+  .service-card
+    height: 260px
+    width: 100%
+    border-radius: 30px
+    position: relative
+    overflow: hidden
+
+    &::after
+      content: ''
+      @include dark($opacity: .4)
+      z-index: 1
+
+    &:hover
+      img
+        transform: scale(1) translateX(0)
+
+    img
+      @include image()
+      transform: scale(1.2) translateX(20px)
+      @include fastTrans()
+
+    .content
+      position: absolute
+      left: 20px
+      bottom: 10px
+      color: $light
+      z-index: 2
+
+      .custom-button
+        padding: 0
+        font-size: 13px
+
+        .name
+          margin: 0
+          line-height: .5rem
+
+        &.unique
+          padding: 0 15px
+
+          &::after
+            height: 6px
+            width: 6px
+
+          &:hover
+            color: $light !important
+            background-color: transparent !important
+
+            &::after
+              height: 20px
+              width: 100%

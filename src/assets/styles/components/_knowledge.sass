@@ -1,0 +1,51 @@
+@use '../helpers/_mixin' as *
+@use '../layout/_grid' as *
+@use '../helpers/_variables' as *
+
+.knowledge
+  overflow: hidden
+
+  .item
+    height: 500px
+    width: 100%
+    @include bgImage()
+    @include flex($justify: center)
+    flex-direction: column
+    text-align: center
+    position: relative
+
+    &:hover
+      &::before
+        opacity: 1
+
+      .details
+        opacity: 1
+
+    &::before
+      content: ''
+      @include dark($opacity: .7)
+      z-index: 1
+      opacity: 0
+      @include trans()
+
+    .details
+      opacity: 0
+      position: relative
+      z-index: 2
+      color: $light
+      @include trans()
+      @include flex($justify: center)
+      flex-direction: column
+
+      h2
+        font-size: 24px
+
+      p
+        font-size: 14px
+        font-weight: 400
+        margin: 1rem 0
+        max-width: 400px
+
+      button
+        @include customButton($bgcolor: $pri, $color: $light)
+        padding: .3rem .5rem

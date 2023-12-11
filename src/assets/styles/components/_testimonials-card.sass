@@ -1,0 +1,83 @@
+@use '../helpers/_mixin' as *
+@use '../layout/_grid' as *
+@use '../helpers/_variables' as *
+
+.testinomial
+  max-width: 1000px
+  margin: 0 auto
+  overflow: hidden
+
+  .mySwiper
+    position: relative
+    height: 100%
+    width: 100%
+
+    .swiper-button-next
+      transform: translateX(10px)
+
+      &:hover
+        &::after
+          background-color: $pri
+          color: $light
+
+    .swiper-button-prev
+      transform: translateX(-10px)
+
+      &:hover
+        &::after
+          background-color: $pri
+          color: $light
+
+    .swiper-button-next, .swiper-button-prev
+      @include flex($justify: center)
+      @include trans()
+
+      &::after
+        height: 2rem !important
+        width: 2rem !important
+        font-size: 1.1rem
+        border: 2px solid $pri
+        color: $pri
+        @include flex($justify: center)
+        @include trans()
+
+        // display: none
+
+  .item
+    @include flex($justify: center)
+    flex-direction: column
+    text-align: center
+    padding: 0 2rem
+
+    .image-sec
+      height: 100px
+      width: 100px
+      overflow: hidden
+      border-radius: 50%
+
+      img
+        height: 100%
+        width: 100%
+        object-fit: cover
+
+    .text-sec
+      text-align: center
+      .desc
+        font-size: 1rem
+        color: $para
+        line-height: 1.5rem
+        margin: 1rem 0
+        text-align: justify
+
+      .name
+        font-size: 18px
+        font-weight: 600
+
+      .post
+        color: $pri
+        font-size: 16px
+        font-weight: 600
+
+      .read-more
+        cursor: pointer
+        color: $dark

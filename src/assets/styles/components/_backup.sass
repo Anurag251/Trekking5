@@ -1,0 +1,438 @@
+@use '../helpers/_variables' as *
+@use '../layout/_grid' as *
+@use '../helpers/_mixin' as *
+
+/***********      Header      ***********/
+header
+  position: sticky
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 100
+  background-color: $light
+  box-shadow: 0 4px 10px rgba($dark, .2)
+  @include trans()
+  // height: 80px
+
+  &.hide
+    position: fixed
+    top: -200px
+    @include trans()
+
+  &.sticky
+    top: 0
+    position: fixed
+    @include trans()
+
+  .wrapper
+    @include flex($justify: stretch)
+    gap: 1rem
+
+  .logo-area
+
+    .logo
+      height: 4rem
+      width: 12rem
+
+      img
+        @include image()
+        object-fit: contain
+
+  .header-area
+    width: 100%
+    @include flex($justify: space-between)
+
+    .whatsAppProfile
+      @include flex($justify: flxe-end)
+      gap: .4rem
+
+      .image
+        height: 2.2rem
+        width: 2.2rem
+        border-radius: 50%
+        overflow: hidden
+
+        img
+          @include image()
+
+      .centent
+        text-align: left
+
+        .number
+          font-size: .9rem
+
+        p
+          font-size: .76rem
+          font-weight: 300
+
+  .header-top
+    height: 3.5rem
+    @include flex($justify: flex-end)
+
+    .header-other
+      @include flex($justify: flex-end)
+      gap: .5rem
+
+    .phoneNumber
+      height: 100%
+      text-align: right
+      padding: .7rem
+
+      p
+        font-size: .7rem
+
+      .nav-btn
+        gap: .5rem
+        font-size: 1.1rem
+        text-align: right
+        @include flex($justify: flex-end)
+        margin-right: 0 !important
+        padding-right: 0
+        font-weight: 600
+        color: $pri
+
+        .icon
+          height: 1.2rem
+          width: 1.2rem
+
+          img
+            @include image()
+
+  .inner
+    @include flex($justify: space-between)
+    height: 3rem
+
+    .logo
+      height: 50px
+      width: 140px
+
+      img
+        @include image()
+        object-fit: contain
+
+    .nav-links
+      @include flex($justify: flex-end)
+      height: 100%
+      width: 100%
+      gap: .2rem
+
+      .drop-menu
+        position: relative
+
+        &:hover
+          .drop-down
+            opacity: 1
+            pointer-events: auto
+
+        .drop-down
+          position: absolute
+          top: 3rem
+          left: 100%
+          transform: translateX(-50%)
+          width: 14.5rem
+          background-color: $light
+          pointer-events: none
+          border-radius: .3rem
+          padding: .4rem
+          opacity: 0
+
+          li
+            &:nth-last-child(1)
+              border-bottom: none
+
+            button
+              cursor: pointer
+              padding: .8rem 1rem
+              color: $dark
+              font-size: 1rem
+              font-weight: 300
+              width: 100%
+              text-align: left
+
+              &:hover
+                background-color: rgba($dark, .06)
+
+              &.active
+                background-color: rgba($dark, .06)
+
+        a
+          height: 100%
+
+      .loginMember
+        background-color: $pri
+        height: 100%
+        @include flex($justify: center)
+
+        a
+          height: 100%
+
+        .nav-btn
+          color: $light
+          height: 100%
+
+      li
+        height: 100%
+
+      .nav-btn
+        height: 100%
+        font-size: 1rem
+        text-transform: capitalize
+        color: $dark
+        cursor: pointer
+        font-weight: 500
+        padding: 0 .8rem
+        border-radius: .3rem
+
+        &:hover
+          background-color: rgba($dark, .06)
+
+        // &:nth-last-child(1), &:nth-last-child(2)
+        //   margin-right: 0
+
+        &.active
+          background-color: rgba($dark, .06)
+
+  .side-nav-btn
+    height: 20px
+    width: 30px
+    @include flex($justify: center)
+    position: relative
+    cursor: pointer
+    display: none
+    background-color: $pri
+    box-shadow: 0 0 0 .5rem $pri
+    border-radius: .1rem
+
+    &.active
+      &::before
+        width: 50%
+
+      &::after
+        width: 50%
+
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      width: 100%
+      height: 2.5px
+      background-color: $light
+      border-radius: 10px
+      @include trans()
+
+    .das
+      height: 2.5px
+      background-color: $light
+      border-radius: 10px
+      width: 100%
+      @include trans()
+
+    &::after
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      height: 2.5px
+      background-color: $light
+      border-radius: 10px
+      @include trans()
+
+/***********      side-nav      ***********/
+.side-nav
+  position: fixed
+  top: 0
+  left: -300px
+  width: 260px
+  height: 100%
+  z-index: 100
+  // background: linear-gradient(30deg, rgba($pri, .85), rgba($sec, .85))
+  background-color: #252525
+  backdrop-filter: blur(10px)
+  pointer-events: none
+  @include trans()
+
+  &.active
+    left: 0px
+    pointer-events: auto
+
+  .side-nav-close-btn
+    position: absolute
+    top: 0
+    right: -30px
+    height: 30px
+    width: 30px
+    background-color: $sec
+    @include flex($justify: center)
+    color: $light
+    font-size: 14px
+    cursor: pointer
+
+  .logo
+    width: 100%
+    @include flex($justify: center)
+    padding: 1rem 0
+
+    img
+      height: 60px
+      width: 160px
+      object-fit: contain
+
+    h3
+      color: $light
+
+  .nav-links
+    padding: 0 1rem
+
+    .nav-btn
+      padding: .6rem .7rem
+      font-size: 16px
+      color: $light
+      cursor: pointer
+      width: 100%
+      text-align: left
+      margin-bottom: .5rem
+      border-radius: 6px
+
+      &:hover
+        background-color: rgba($light,.2)
+
+      &.active
+        background-color: rgba($light,.2)
+
+.big-drop-down
+  position: fixed
+  top: 7.5rem
+  right: 10%
+  border-radius: 4px
+  max-width: 600px
+  width: 100%
+  z-index: 100
+  @include flex($justify: stretch)
+  align-items: flex-start
+  background-color: rgba($light, .9)
+  // background-color: $light
+  backdrop-filter: blur(20px)
+  box-shadow: 0 0 10px rgba($dark, .2)
+  transform: translateY(-80px) scale(1.03)
+  opacity: 0
+  @include trans()
+  pointer-events: none
+  user-select: none
+
+  &.active
+    opacity: 1
+    transform: translateY(0px) scale(1)
+    pointer-events: auto
+    user-select: auto
+
+  &:hover
+    .link-cagtegory
+      background-color: rgba($light, .9)
+
+  .link-cagtegory
+    width: 30%
+    padding: 1rem
+    background-color: rgba($light, .7)
+    transition: .4s
+    border-right: 1px solid rgba($dark, .3)
+
+    ul
+      li
+        height: 70px
+        width: 100%
+        margin-bottom: 1rem
+        @include flex($justify: center)
+        @include bgImage()
+        text-align: center
+        color: $light
+        position: relative
+        border-radius: 4px
+        padding: .2rem
+        cursor: pointer
+        transition: .3s
+
+        &.active
+          transform: scale(1.1)
+          height: 100px
+
+          span
+            opacity: 1
+
+          &::after
+            opacity: 1
+
+        &:nth-last-child(1)
+          margin-bottom: 0
+
+        &:hover
+          transform: scale(1.1)
+          height: 100px
+
+          span
+            opacity: 1
+
+          &::after
+            opacity: 1
+
+        span
+          position: relative
+          z-index: 2
+          font-size: 14px
+          opacity: 0
+
+        &::after
+          content: ''
+          position: absolute
+          left: 0
+          top: 0
+          height: 100%
+          width: 100%
+          background-color: rgba($dark, .4)
+          z-index: 1
+          opacity: 0
+
+  .link-details
+    width: 70%
+    padding: 1rem
+    height: 100%
+
+    .link-title
+      @include flex($justify: space-between)
+
+      button
+        border-bottom: 1px solid $dark
+        cursor: pointer
+
+        a
+          color: $dark
+
+          &:hover
+            color: $sec
+
+        &:hover
+          color: $sec
+
+    h4
+      margin-bottom: 1rem
+      font-size: 18px
+      font-weight: 500
+      margin-bottom: 1rem
+
+    ul
+      padding-left: 1.5rem
+
+      li
+        font-size: 16px
+        margin-bottom: .7rem
+        list-style: decimal
+        cursor: pointer
+        &:hover
+          color: $sec
+
+        a
+          color: $dark
+
+          &:hover
+            color: $sec

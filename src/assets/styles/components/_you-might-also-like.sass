@@ -1,0 +1,36 @@
+@use '../helpers/_mixin' as *
+@use '../layout/_grid' as *
+@use '../helpers/_variables' as *
+
+.you-might-also-like
+  .like-list
+    @include grid($columns: repeat(5, 1fr))
+
+    .big-card
+      .image-sec
+        height: 140px
+
+      .content-area
+        padding: 12px
+        background-color: #ffffff
+
+        .name
+          font-size: 15px
+          max-width: 200px
+
+        .user
+          height: 30px
+          width: 30px
+
+        .rating
+          font-size: 14px
+
+        .item-footer
+          border-top: none
+          padding: 0 0 .3rem
+
+          .price
+            font-size: 13px
+
+          .days
+            font-size: 11px

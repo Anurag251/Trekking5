@@ -1,0 +1,20 @@
+@use '../helpers/_mixin' as *
+@use '../layout/_grid' as *
+@use '../helpers/_variables' as *
+
+.page-banner
+  @include bgImage()
+  padding: 1rem 0
+
+  .wrapper
+    height: 100%
+    padding-top: 1rem
+    padding-bottom: 1rem
+    background-color: rgba($dark, .4)
+    backdrop-filter: blur(2px)
+    @include flex($justify: center)
+    border-radius: 10px
+
+    .hotel-search
+      max-width: 70rem
+      width: 100%

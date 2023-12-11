@@ -1,0 +1,46 @@
+@use '../helpers/_variables' as *
+@use '../layout/_grid' as *
+@use '../helpers/_mixin' as *
+
+.all-package
+  width: 100%
+  margin-bottom: 2rem
+
+  .packages-list-area
+    @include flex($justify: stretch)
+    align-items: flex-start
+
+    .categories
+      width: 25%
+      padding: 1.5rem 0 1rem 1rem
+
+      .filter-box
+        padding: 1rem
+        border-radius: 10px
+        background-color: $light
+        box-shadow: 0 0 10px rgba($dark, .1)
+        text-align: center
+
+        .filter-title
+          font-size: 1.2rem
+          font-weight: 600
+          margin-bottom: 1rem
+
+        li
+          margin-bottom: .5rem
+
+          button
+            padding: .5rem 1rem
+            width: 100%
+            text-align: left
+            border-radius: 6px
+            cursor: pointer
+            font-size: 1rem
+
+            &.active
+              background-color: rgba($pri, .1)
+              box-shadow: 0 0 10px rgba($pri, .1)
+
+    .packages-list
+      width: 75%
+      padding: 1.5rem

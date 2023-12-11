@@ -1,0 +1,509 @@
+@use '../helpers/_mixin' as *
+@use '../layout/_grid' as *
+@use '../helpers/_variables' as *
+
+.package-details
+  .package-title
+    font-size: 30px
+    font-weight: 500
+    margin: 0 0 1rem
+    text-align: center
+
+  .package-details-image
+    margin-bottom: 100px
+
+    .images-sec
+      position: relative
+      height: 600px
+
+      .image-preview
+        position: relative
+        overflow: hidden
+        // height: 600px
+        height: 100%
+
+        .mySwiper2
+          height: 100%
+
+        .clickToView
+          height: 100%
+          width: 100%
+
+          img
+            @include image()
+
+      .image-btns
+        position: absolute
+        top: 100%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 98%
+        overflow: hidden
+        z-index: 10
+
+        .swiper-slide
+          @include flex($justify: center)
+
+          .item
+            width: 240px
+            height: 150px
+
+            img
+              width: 100%
+              height: 100%
+              object-fit: cover
+
+  .package-main-info
+    height: 60px
+    width: 100%
+    margin: 2rem 0
+    @include flex($justify: center)
+    // background-color: rgba($dark, .9)
+    background: linear-gradient(30deg, rgba($pri, .8), rgba($sec, .8))
+
+    ul
+      @include flex($justify: space-evenly)
+      width: 100%
+
+      li
+        color: $light
+
+  .packages-details-area
+    @include grid($columns: 1.5fr 1fr)
+
+    .packages-details
+      .navigate-btn
+        @include flex($justify: center)
+
+        li
+          position: relative
+          font-size: 16px
+          font-weight: 400
+          margin: 0 2rem
+          cursor: pointer
+          padding: .5rem 1rem
+          text-align: center
+          height: 40px
+
+          &.active
+            font-weight: 500
+
+            &::after
+              top: 50px
+              opacity: 1
+
+          &::after
+            content: ''
+            position: absolute
+            left: 50%
+            top: 100px
+            transform: translateX(-50%) rotate(45deg)
+            height: 30px
+            width: 30px
+            background-color: $light
+            @include trans()
+            opacity: 0
+
+      .list
+        z-index: 2
+        background-color: $light
+        // max-height: 0
+        // overflow: hidden
+        @include trans()
+        position: absolute
+        top: -20px
+        opacity: 0
+        pointer-events: none
+        user-select: none
+        transform: scale(1.1)
+        max-width: 1000px
+
+        &.active
+          // max-height: 1000px
+          // margin-top: 1.3rem
+          position: relative
+          top: 25px
+          opacity: 1
+          pointer-events: auto
+          user-select: auto
+          transform: scale(1)
+
+        .item
+          padding: 1rem
+
+          .item-name
+            font-weight: 600
+            font-size: 18px
+            margin-bottom: .4rem
+
+          .desc
+            font-size: 15px
+            line-height: 1.4rem
+            color: rgba($dark, .9)
+            text-align: justify
+
+          ul
+            padding-left: 1.5rem
+            margin-top: .6rem
+
+            li
+              list-style: disc
+              margin-bottom: .6rem
+              font-size: 15px
+              color: rgba($dark, .9)
+              line-height: 1.4rem
+              text-align: justify
+
+          .faq
+            padding: 0
+
+            li
+              list-style: none
+              padding: 1rem
+              border-radius: 10px
+              background-color: $light
+              margin-bottom: 1rem
+              max-height: 60px
+              overflow: hidden
+              @include trans()
+              // box-shadow: 0 4px 10px rgba($dark, .08)
+              background: linear-gradient(30deg, rgba($pri, .06), rgba($sec, .06))
+
+              &:hover
+                box-shadow: 0 4px 10px rgba($dark, .15)
+
+              &.active
+                max-height: 1000px
+
+                .title
+                  // border-bottom: 1px solid rgba($dark, .2)
+                  padding: .5rem 0 1rem
+
+                  span
+                    max-width: auto
+                    white-space: break-spaces
+
+                  i
+                    transform: rotateX(180deg)
+
+              .title
+                @include flex($justify: space-between)
+                align-items: flex-start
+                padding: .4rem 0 1rem
+                border-bottom: 1px solid transparent
+                margin-bottom: 0
+                cursor: pointer
+                font-weight: 500
+                font-size: 15px
+
+                span
+                  white-space: nowrap
+                  overflow: hidden
+                  text-overflow: ellipsis
+                  max-width: 600px
+                  text-align: left
+
+                i
+                  font-size: 16px
+                  @include trans()
+
+              .desc
+                font-size: 14px
+                line-height: 1.6rem
+                text-align: justify
+                color: rgba($dark, .8)
+                text-align: justify
+
+    .package-booking-area
+
+      .best-packages
+        margin-top: 50px
+
+        .title-sec
+          font-size: 20px
+          font-weight: 500
+          margin-bottom: 30px
+
+        .list
+          .item
+            @include flex($justify: space-between)
+            margin-bottom: 1rem
+            @include trans()
+
+            &:hover
+              background-color: $light
+              box-shadow: 0 4px 10px rgba($dark, .1)
+
+              .image
+                img
+                  transform: scale(1.1)
+
+            .image
+              height: 100px
+              width: 35%
+              overflow: hidden
+
+              img
+                @include image()
+                @include trans()
+
+            .details
+              width: 65%
+              padding: .5rem
+              height: 100%
+
+              button
+                @include customButton($bgcolor: $pri, $color: $light)
+
+                font-size: 14px
+                font-weight: 600
+
+              .name-sec
+                @include flex($justify: space-between)
+                align-items: flex-start
+                margin-bottom: 18px
+
+                .name
+                  h4
+                    font-size: 16px
+                    font-weight: 500
+                    margin-bottom: 4px
+                    color: $dark
+                    max-width: 250px
+
+                .price
+                  font-size: 16px
+                  color: $sec
+                  font-weight: 500
+                  text-align: right
+
+                  span
+                    color: $sec
+                    font-size: 10px
+
+.start-booking
+  padding: 1.5rem
+  background-color: $light
+
+  .title-sec
+    @include flex($justify: space-between)
+    margin-bottom: 1rem
+
+    .form-title
+      font-size: 1.4rem
+      font-weight: 500
+
+      small
+        font-size: 1rem
+
+    .price
+      font-size: 20px
+      color: $sec
+      font-weight: 500
+
+      span
+        color: $sec
+        font-size: 12px
+
+  .booking-form
+    .form-inputs
+      margin-top: 2rem
+
+      .input-group
+        @include flex($justify: space-between)
+        gap: 1rem
+
+    .group
+      width: 100%
+      height: 3rem
+      position: relative
+      margin-bottom: 1.5rem
+
+      .input-icon
+        position: absolute
+        right: 1rem
+        top: 50%
+        transform: translateY(-50%)
+        height: 1.1rem
+        width: 1.1rem
+
+        &.eye-icon
+          cursor: pointer
+
+          &.active
+            &::after
+              height: 0
+
+          &::after
+            content: ''
+            position: absolute
+            left: 50%
+            top: 50%
+            transform: translate(-50%, -50%) rotate(45deg)
+            height: 105%
+            width: 1.5px
+            background-color: $text
+            border-right: 2px solid $light
+            z-index: 2
+            @include trans()
+
+        svg
+          height: 100%
+          width: 100%
+
+      &.fileType
+        border: 1.5px solid #ACACAC
+        border-radius: .4rem
+        padding: .3rem 1rem
+
+      &.active
+        border-color: $sec
+
+        .custom-input
+          padding: 0 !important
+          border: none !important
+          padding-top: .5rem !important
+
+      &.textarea
+        min-height: 6rem
+        height: auto
+
+        .custom-input
+          min-height: 8rem
+          height: 100%
+          max-height: 15rem
+
+        label
+          top: 1.3rem
+
+        textarea
+          resize: vertical
+          min-height: 3.3rem
+
+      &.error
+        border-color: #A00000
+        margin-bottom: 2rem
+
+        label
+          color: #A00000
+
+      .input-error
+        position: absolute
+        bottom: -1.2rem
+        left: .4rem
+        text-align: left
+        font-size: 12px
+        font-weight: 500
+        color: #A00000
+
+      label
+        position: absolute
+        top: 50%
+        left: .5rem
+        padding: 0 .5rem
+        transform: translateY(-50%)
+        @include fastTrans()
+        pointer-events: none
+        color: lighten($text, 35%)
+        text-transform: uppercase
+        font-size: .9rem
+        letter-spacing: 1px
+
+        &::after
+          content: ''
+          position: absolute
+          top: 50%
+          left: 0
+          transform: translateY(-50%)
+          height: 4px
+          width: 100%
+          background-color: $light
+          z-index: -1
+
+        &.active, &.autoActive
+          @include shrinkLabel()
+          color: $sec
+
+      .inner-input
+        width: 100%
+        height: 100%
+
+      .custom-input
+        width: 100%
+        height: 100%
+        font-size: 1rem
+        border: 1px solid #ACACAC
+        border-radius: .3rem
+        padding: .5rem 1rem
+        text-align: left
+
+        &::placeholder
+          color: transparent
+
+        &:focus
+          border-color: $sec
+
+          &::placeholder
+            color: rgba($dark, .6)
+
+        &:focus ~ label
+          @include shrinkLabel()
+          color: $sec
+
+        &.active
+          border-color: $sec
+
+      .custom-input[type='file']
+        opacity: 0
+        padding-top: .2rem
+        border: 1px solid #ACACAC
+        border-radius: .4rem
+        padding: .5rem 1rem
+
+        &.active[type='file']
+          opacity: 1
+
+    .submit-btn
+      font-weight: 600
+      margin-top: 1rem
+      @include customButton($bgcolor: $pri, $color: $light)
+
+      font-size: 16px
+      @include flex($justify: flex-start)
+      gap: 10px
+
+      &.active
+        pointer-events: none
+        opacity: .8
+
+        &::before
+          display: block
+
+      &::before
+        content: ''
+        height: 15px
+        width: 15px
+        border: 2px solid transparent
+        border-top: 2px solid $light
+        border-bottom: 2px solid $light
+        border-radius: 50%
+        animation: loadingBtn .8s infinite cubic-bezier(0.77, 0, 0.175, 1)
+        display: none
+
+  .Package-details-page
+    .package-detail
+      display: flex
+      flex-direction: column
+
+      .PackageGalleryComponent
+        width: 100%
+        order: 2
+
+      .package-detail-layout
+        @include flex($justify: space-between)
+        align-items: flex-start
+        flex-direction: column
+        gap: 20px
+
+        .package-booking-details
+          width: 100%

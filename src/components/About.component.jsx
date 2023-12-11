@@ -1,0 +1,54 @@
+import { useContext } from "react";
+import { AllDataContext } from "../context/AllData.context";
+import { Link } from "react-router-dom";
+
+const AboutComponent = () => {
+  const { aboutDetails, galleryDatas } = useContext(AllDataContext);
+
+  return (
+    <section>
+      <div className="wrapper">
+        <div className="about-page">
+          <div className="title">Making the Adventure Happen</div>
+
+          <div className="section">
+            <div className="text-sec">
+              <div className="sec-title">Welcome to Nepal</div>
+
+              <p
+                className="desc"
+                dangerouslySetInnerHTML={{
+                  __html: aboutDetails && aboutDetails[0].description,
+                }}
+              />
+
+              <Link to="/about">
+                <button className="readMore">Read More</button>
+              </Link>
+            </div>
+
+            <div className="image-sec">
+              <img
+                src={aboutDetails && aboutDetails[0].image.original_image}
+                alt="about-image"
+              />
+
+              {galleryDatas &&
+                galleryDatas
+                  .filter((data, idx) => idx < 3)
+                  .map((data, idx) => (
+                    <img
+                      key={idx}
+                      src={data.original_image}
+                      alt="about-image"
+                    />
+                  ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutComponent;
