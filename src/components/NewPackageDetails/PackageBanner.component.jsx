@@ -26,9 +26,9 @@ const PackageBannerComponent = ({ contentLeft, image, children }) => {
         {contentLeft ? <h4>{contentLeft}</h4> : null}
         <h1 className={contentLeft ? "contentLeft" : ""}>{children}</h1>
 
-        <p className="breadcrumbs">
+        <div className="breadcrumbs">
           <Link to="/">Home </Link> {crumbs}
-        </p>
+        </div>
       </div>
     </div>
   );
