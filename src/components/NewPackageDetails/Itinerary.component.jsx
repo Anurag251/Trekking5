@@ -42,40 +42,45 @@ const ItineraryComponent = ({ data }) => {
             <div className="inner-details">
               <div className="main-container">
                 <div className="all-list">
-                  {data.itenarydetails.map((itinerary, idx) => (
-                    <div
-                      key={idx}
-                      className={`ItineraryCardComponent ${
-                        selectedItinerary === itinerary.trip_title
-                          ? "active"
-                          : ""
-                      }`}
-                    >
+                  {data.itenarydetails
+                    .filter(
+                      (data) =>
+                        data.trip_title !== "" && data.trip_title !== null
+                    )
+                    .map((itinerary, idx) => (
                       <div
-                        className="item-title"
-                        onClick={() =>
-                          setSelectedItinerary(itinerary.trip_title)
-                        }
+                        key={idx}
+                        className={`ItineraryCardComponent ${
+                          selectedItinerary === itinerary.trip_title
+                            ? "active"
+                            : ""
+                        }`}
                       >
-                        <div className="name">
-                          <div className="indicator">{idx + 1}</div>
-                          {itinerary.trip_title}{" "}
+                        <div
+                          className="item-title"
+                          onClick={() =>
+                            setSelectedItinerary(itinerary.trip_title)
+                          }
+                        >
+                          <div className="name">
+                            <div className="indicator">{idx + 1}</div>
+                            {itinerary.trip_title}{" "}
+                          </div>
+                          <div className="arrow">
+                            <i className="fas fa-angle-down"></i>
+                          </div>
                         </div>
-                        <div className="arrow">
-                          <i className="fas fa-angle-down"></i>
-                        </div>
-                      </div>
 
-                      <div className="item-body">
-                        <p
-                          className="desc"
-                          dangerouslySetInnerHTML={{
-                            __html: itinerary && itinerary.trip_details,
-                          }}
-                        />
+                        <div className="item-body">
+                          <p
+                            className="desc"
+                            dangerouslySetInnerHTML={{
+                              __html: itinerary && itinerary.trip_details,
+                            }}
+                          />
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
                 </div>
               </div>
             </div>

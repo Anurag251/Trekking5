@@ -22,7 +22,7 @@ const NewPackageDetailsComponent = () => {
   const location = useLocation();
 
   useEffect(() => {
-    setDetailsPageNav("TripOverview")
+    setDetailsPageNav("TripOverview");
     if (tripDatas !== null) {
       tripDatas?.forEach((data) => {
         if (location.pathname.split("/")[2] == data.slug) {
@@ -31,6 +31,8 @@ const NewPackageDetailsComponent = () => {
       });
     }
   }, [location, tripDatas]);
+
+  console.log(selectedData);
 
   return (
     <Fragment>
@@ -51,15 +53,42 @@ const NewPackageDetailsComponent = () => {
 
           <TripOverviewComponent data={selectedData} />
 
-          <ItineraryComponent data={selectedData} />
+          {(selectedData.itenarydetails !== null &&
+            selectedData.itenarydetails !== undefined) ||
+          selectedData.itenarydetails.length ? (
+            selectedData.itenarydetails[0]?.trip_title !== null ? (
+              <ItineraryComponent data={selectedData} />
+            ) : null
+          ) : null}
 
-          <MoreInfoComponent data={selectedData} />
+          {(selectedData.exclude !== null || selectedData.include !== null) &&
+          (selectedData.exclude !== undefined ||
+            selectedData.include !== undefined) &&
+          (selectedData.exclude !== "" || selectedData.include !== "") ? (
+            <MoreInfoComponent data={selectedData} />
+          ) : null}
 
-          <DateAndPriceComponent data={selectedData} />
+          {(selectedData.price !== null && selectedData.price !== undefined) ||
+          selectedData.price.length ? (
+            selectedData.price[0]?.date !== null ||
+            selectedData.price[0]?.label !== null ||
+            selectedData.price[0]?.space !== null ||
+            selectedData.price[0]?.value !== null ? (
+              <DateAndPriceComponent data={selectedData} />
+            ) : null
+          ) : null}
 
-          <TripExtensionsComponent data={selectedData} />
+          {selectedData.equipments !== null &&
+          selectedData.equipments !== undefined &&
+          selectedData.equipments !== "" ? (
+            <TripExtensionsComponent data={selectedData} />
+          ) : null}
 
-          <GalleryComponent data={selectedData} />
+          {selectedData.galleryimage !== null &&
+          selectedData.galleryimage !== undefined &&
+          selectedData.galleryimage.length ? (
+            <GalleryComponent data={selectedData} />
+          ) : null}
 
           <YouMightAlsoLikeComponent data={selectedData} />
         </div>

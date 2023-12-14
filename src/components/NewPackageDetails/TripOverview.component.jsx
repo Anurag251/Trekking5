@@ -9,21 +9,21 @@ const TripOverviewComponent = ({ data }) => {
   return (
     <div
       className={`TripOverview ${
-        detailsPageNav === "TripOverview" ? "active" : ""
+        detailsPageNav === "Overview" ? "active" : ""
       }`}
     >
       <section>
         <div className="wrapper">
           <div
             className={`inner-details-button ${
-              detailsPageNav === "TripOverview" ? "show-details" : ""
+              detailsPageNav === "Overview" ? "show-details" : ""
             }`}
           >
             <div
               className="main-title"
               onClick={() => {
                 window.scroll(0, 370);
-                setDetailsPageNav("TripOverview");
+                setDetailsPageNav("Overview");
               }}
             >
               trip overview <i className="fas fa-angle-down"></i>
@@ -32,12 +32,17 @@ const TripOverviewComponent = ({ data }) => {
             <div className="inner-details">
               <div className="main-container">
                 <div className="TripOverviewMainContent">
-                  <p
-                    className="desc"
-                    dangerouslySetInnerHTML={{
-                      __html: data.content,
-                    }}
-                  />
+                  {data.content !== null &&
+                  data.content !== undefined &&
+                  data.content !== "" ? (
+                    <p
+                      className="desc"
+                      dangerouslySetInnerHTML={{
+                        __html: data.content,
+                      }}
+                    />
+                  ) : null}
+
                   <PackageMainDetailsComponent data={data} />
                 </div>
               </div>

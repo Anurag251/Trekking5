@@ -26,9 +26,9 @@ const PageBannerComponent = ({ contentLeft, image, children }) => {
         {contentLeft ? <h4>{contentLeft}</h4> : null}
         <h1 className={contentLeft ? "contentLeft" : ""}>{children}</h1>
 
-        <p className={`breadcrumbs ${contentLeft ? "contentLeft" : ""}`}>
+        <div className={`breadcrumbs ${contentLeft ? "contentLeft" : ""}`}>
           <Link to="/">Home </Link> {crumbs}
-        </p>
+        </div>
       </div>
     </div>
   );

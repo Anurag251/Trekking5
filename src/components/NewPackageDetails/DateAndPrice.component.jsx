@@ -29,21 +29,21 @@ const DateAndPriceComponent = ({ data }) => {
   return (
     <div
       className={`DateAndPriceSection ${
-        detailsPageNav === "DatePrices" ? "active" : ""
+        detailsPageNav === "Departure Date & Price" ? "active" : ""
       }`}
     >
       <section>
         <div className="wrapper">
           <div
             className={`inner-details-button ${
-              detailsPageNav === "DatePrices" ? "show-details" : ""
+              detailsPageNav === "Departure Date & Price" ? "show-details" : ""
             }`}
           >
             <div
               className="main-title"
               onClick={() => {
                 window.scroll(0, 370);
-                setDetailsPageNav("DatePrices");
+                setDetailsPageNav("Departure Date & Price");
               }}
             >
               Dates & Prices <i className="fas fa-angle-down"></i>

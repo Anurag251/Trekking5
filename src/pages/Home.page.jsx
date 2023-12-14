@@ -27,8 +27,6 @@ const HomePage = () => {
 
   const currentYear = new Date().getFullYear();
 
-  console.log(tripDatas);
-
   return (
     <div className="home-page">
       {bannerDatas?.length ? <BannerComponent /> : null}

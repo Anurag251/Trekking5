@@ -7,7 +7,6 @@ import iconTimeTable from "../../assets/images/timeTable.png";
 import iconSeason from "../../assets/images/season.png";
 
 const PackageMainDetailsComponent = ({ data }) => {
-  console.log(data);
   return (
     <div className="PackageMainDetails">
       <ul className="item-list">

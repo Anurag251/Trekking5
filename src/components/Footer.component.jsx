@@ -17,8 +17,6 @@ const FooterComponent = ({ title }) => {
 
   const navigate = useNavigate();
 
-  console.log(contactDatas);
-
   return (
     <footer
       style={{

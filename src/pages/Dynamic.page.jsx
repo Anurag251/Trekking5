@@ -22,7 +22,13 @@ const DynamicPage = () => {
 
   return (
     <div className="TrekkingInNepalPage">
-      <PageBannerComponent image={image}>
+      <PageBannerComponent
+        image={
+          selectedData?.image !== null
+            ? selectedData?.image?.original_image
+            : image
+        }
+      >
         {location.pathname.split("/")[1].replace(/-/g, " ")}
       </PageBannerComponent>
 

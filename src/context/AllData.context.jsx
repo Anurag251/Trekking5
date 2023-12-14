@@ -42,7 +42,7 @@ export const AllDataProvider = ({ children }) => {
   const [selectedCate, setSelectedCate] = useState(null);
   const [searchData, setSearchData] = useState(null);
   const [selectedDatas, setSelectedDatas] = useState(null);
-  const [detailsPageNav, setDetailsPageNav] = useState("TripOverview");
+  const [detailsPageNav, setDetailsPageNav] = useState("");
   const [hitAgain, setHitAgain] = useState(false);
 
   useEffect(() => {

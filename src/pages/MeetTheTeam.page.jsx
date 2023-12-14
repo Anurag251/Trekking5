@@ -75,10 +75,10 @@ const MeetTheTeamPage = () => {
       <section>
         <div className="HelpfulYetis">
           <div className="wrapper">
-            <div className="title-part">
+            {/* <div className="title-part">
               <div className="name">Team</div>
               <h5>Talk to Experts</h5>
-            </div>
+            </div> */}
 
             <div className="list">
               {teamDatas &&
@@ -101,7 +101,7 @@ const MeetTheTeamPage = () => {
                       </ul>
                       <div className="name">{data.name}</div>
 
-                   {/*    <ul className="social-media">
+                      {/*    <ul className="social-media">
                         {data?.linkedin !== null ? (
                           <li>
                             <Link to={data?.linkedin} target="blank">
@@ -146,3 +146,7 @@ const MeetTheTeamPage = () => {
 };
 
 export default MeetTheTeamPage;
+
+// optimize
+
+// https://www.trekkernepal.com/trekking/annapurna-round-2/
