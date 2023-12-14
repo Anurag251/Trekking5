@@ -136,7 +136,7 @@ const NavigateButtonsComponent = ({ data }) => {
                 className={`bookNowNutton`}
                 onClick={() => {
                   window.scroll(0, 470);
-                  setDetailsPageNav("DatePrices");
+                  setDetailsPageNav("Departure Date & Price");
                 }}
               >
                 ENQUIRE NOW
