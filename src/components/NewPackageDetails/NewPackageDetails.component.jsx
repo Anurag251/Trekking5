@@ -32,8 +32,6 @@ const NewPackageDetailsComponent = () => {
     }
   }, [location, tripDatas]);
 
-  console.log(selectedData);
-
   return (
     <Fragment>
       {selectedData !== null ? (
